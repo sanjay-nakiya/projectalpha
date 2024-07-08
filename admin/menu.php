@@ -1,7 +1,7 @@
 <nav class="navbar container align-item-center   viral-card  m-auto navbar-expand-lg mt-3 p-2 mb-3">
 	<div class="container-fluid text-center">
 	
-		<a class="navbar-brand " href="#"> Saustudy </a>
+		<a class="navbar-brand " href="#"> Alpha </a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -13,10 +13,10 @@
 					
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="courses.php">Courses</a>
+					<a class="nav-link " href="client.php">client</a>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link " href="feedback.php">feedback</a>
+					<a class="nav-link " href="category.php">category</a>
 				</li>
 				<li class="nav-item ">
 					<a class="nav-link " href="#">Home</a>
