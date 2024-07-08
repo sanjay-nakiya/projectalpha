@@ -7,7 +7,7 @@
     <?php include 'css.php'; ?>
 </head>
 <body>
-    <h1>hello client</h1>
+    <h1>hello admin</h1>
     <?php include 'menu.php'; ?>
 
     <?php include 'js.php'; ?>
