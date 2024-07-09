@@ -13,7 +13,7 @@
 					
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="client.php">client</a>
+					<a class="nav-link " href="clients.php">client</a>
 				</li>
 				<li class="nav-item ">
 					<a class="nav-link " href="category.php">category</a>
