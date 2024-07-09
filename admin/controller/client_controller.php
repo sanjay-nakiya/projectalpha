@@ -4,6 +4,7 @@ error_reporting(0);
 class client
 {
     private $conn = '';
+    private $db;
     function __construct()
     {
         include 'database/db.php';
