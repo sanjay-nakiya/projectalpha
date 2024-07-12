@@ -17,7 +17,7 @@ if (0 == $_SESSION['ROLE']) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saustudy</title>
+    <title>Alpha</title>
     <?php include 'css.php'; ?>
 </head>
 
