@@ -29,12 +29,12 @@ if (0 == $_SESSION['ROLE']) {
         <div class="row p-2 mt-1">
 
             <div class=" viral-card text-center">
-                <form class="mt-3" action="add_client.php" method="POST">
-                    
+                
                     <div class="input-group mb-3">
-                        <button type="submit" name="submit" class="btn viral-card-2 p-2 col-2">Add Client</button>
+                        <a href="add_client.php"   type="submit" name="submit" class="btn viral-card-2 p-2 col-2"> Add Client</a>
+                       
                     </div>
-                </form>
+               
             </div>
 
         </div>
