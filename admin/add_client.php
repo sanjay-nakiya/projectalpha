@@ -30,30 +30,38 @@ if (0 == $_SESSION['ROLE']) {
 
                 <div class=" viral-card">
                     <form class="row g-3">
-                    <div class="col-md-6">
+                        <div class="col-md-6">
                             <label for="stname" class="form-label">Store-Name</label>
-                            <input type="text" class="form-control" id="stname">
+                            <input type="text" class="form-control" id="stname" name="stname">
                         </div>
                         <div class="col-md-6">
                             <label for="owname" class="form-label">Owner-Name</label>
-                            <input type="text" class="form-control" id="owname">
+                            <input type="text" class="form-control" id="owname" name="owname">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <label for="category" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="category" name="category">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputPassword4" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4">
+                            <label for="gstno" class="form-label">Gst-No</label>
+                            <input type="text" class="form-control" id="gstno" name="gstno">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="pass" name="pass">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Address" name="address">
                         </div>
-                       
+
                         <div class="col-md-6">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <label for="City" class="form-label">City</label>
+                            <input type="text" class="form-control" id="City">
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">State</label>
@@ -78,7 +86,7 @@ if (0 == $_SESSION['ROLE']) {
                             <button type="submit" class="btn viral-card-2 m-2">Add Client</button>
                         </div>
                     </form>
-                    
+
                 </div>
 
             </div>
@@ -88,7 +96,7 @@ if (0 == $_SESSION['ROLE']) {
 
 
         </div>
-       
+
 
 
         <?php include 'js.php'; ?>
