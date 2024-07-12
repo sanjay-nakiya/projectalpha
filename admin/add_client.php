@@ -10,64 +10,86 @@ if (!isset($_SESSION['ID'])) {
 }
 if (0 == $_SESSION['ROLE']) {
     include 'controller/client_controller.php';
-    ?>
-<!DOCTYPE html>
-<html lang="en">
+?>
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha</title>
-    <?php include 'css.php'; ?>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alpha</title>
+        <?php include 'css.php'; ?>
+    </head>
 
-<body class="">
-    <?php include 'menu.php'; ?>
+    <body class="">
+        <?php include 'menu.php'; ?>
 
-    <div class="container  ">
+        <div class="container  ">
 
-        <div class="row p-2 mt-1">
+            <div class="row p-2 mt-1">
 
-            <div class=" viral-card text-center">
-            <form class=" mt-3 aline-item-center p-2" action="" method="POST">
-                            
-                            <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="stname"><i
-                                    class="bi bi-envelope-at"></i> Store-Name</span>
-                                <input type="stname" name="stname" class="viral-card-1 m-1 p-2" placeholder="Store Name">
-                              </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="basic-addon1"><i
-                                    class="bi bi-person-circle"></i>  Owner Name</span>
-                                <input type="text" name="owname" class="viral-card-1 m-1 p-2" placeholder="Owner Name">
-                              </div>
-                              <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="basic-addon1"><i
-                                    class="bi bi-shield-lock"></i></span>
-                                <input type="password" name="password" class="viral-card-1 m-1 p-2" placeholder="Password">
-                              </div>
-                           
-                           <div class="mb-3 text-center">
-                            <button type="submit" name="submit" class="btn viral-card-2 ">login</button>
+                <div class=" viral-card">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
                             </div>
-                           
-                        </form>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn viral-card-2 m-2">Add Client</button>
+                        </div>
+                    </form>
+                    
+                </div>
+
             </div>
+
 
         </div>
 
+
+        </div>
        
-    </div>
 
 
-    </div>
-    <?php include 'footer.php'; ?>
+        <?php include 'js.php'; ?>
+    </body>
 
-
-    <?php include 'js.php'; ?>
-</body>
-
-</html>
+    </html>
 
 <?php } else {
 
