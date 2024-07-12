@@ -30,6 +30,14 @@ if (0 == $_SESSION['ROLE']) {
 
                 <div class=" viral-card">
                     <form class="row g-3">
+                    <div class="col-md-6">
+                            <label for="stname" class="form-label">Store-Name</label>
+                            <input type="text" class="form-control" id="stname">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="owname" class="form-label">Owner-Name</label>
+                            <input type="text" class="form-control" id="owname">
+                        </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
                             <input type="email" class="form-control" id="inputEmail4">
@@ -42,10 +50,7 @@ if (0 == $_SESSION['ROLE']) {
                             <label for="inputAddress" class="form-label">Address</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                        </div>
+                       
                         <div class="col-md-6">
                             <label for="inputCity" class="form-label">City</label>
                             <input type="text" class="form-control" id="inputCity">
@@ -69,7 +74,7 @@ if (0 == $_SESSION['ROLE']) {
                                 </label>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 text-center">
                             <button type="submit" class="btn viral-card-2 m-2">Add Client</button>
                         </div>
                     </form>
