@@ -35,7 +35,7 @@ if (0 == $_SESSION['ROLE']) {
                         <span class="input-group-text  viral-card-2 col-2" id="category">
                             <h5><i class="bi bi-journal"></i>category</h5>
                         </span>
-                        <input type="text" name="category" class="viral-card-1  p-2 col-8" placeholder="Add New category">
+                        <input type="text" name="category" class="viral-card-1  p-2 col-8" placeholder="Add New category" required>
 
                         <button type="submit" name="submit" class="btn viral-card-2 p-2 col-2">submit</button>
                     </div>
