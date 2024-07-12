@@ -9,7 +9,7 @@ if (!isset($_SESSION['ID'])) {
     exit();
 }
 if (0 == $_SESSION['ROLE']) {
-    include 'controller/categorys_controller.php';
+    include 'controller/category_controller.php';
     ?>
 <!DOCTYPE html>
 <html lang="en">
