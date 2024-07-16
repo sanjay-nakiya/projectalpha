@@ -1,8 +1,4 @@
-<?php 
-   $path = $_SERVER['DOCUMENT_ROOT'];
-   $path .= "/projectalpha";
-  // include_once($path);
-?>
+<?php include 'path.php' ?>
 <!DOCTYPE html>
 
 <html>
