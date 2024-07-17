@@ -26,10 +26,12 @@
           <div class="card">
             <div class="card-body">
               <!-- Logo -->
-              <div class="app-brand justify-content-center ">
-                <a href="index.php" class="app-brand-link text-center ">
-                  <img src="<?php echo $prn; ?>/admin/img/admin-logo.png" alt="" class="ms-3 col-sm-5" srcset="">
-                  
+              <div class="app-brand justify-content-center">
+                <a href="index.php" class="app-brand-link gap-2">
+                  <span class="app-brand-logo demo">
+                    
+                  </span>
+                  <span class="app-brand-text demo text-body fw-bold">Admin</span>
                 </a>
               </div>
               <!-- /Logo -->
