@@ -1,3 +1,32 @@
-<div class=" container btn viral-card  position-absolute bottom-0 start-50 translate-middle-x mb-2">
-	©Viral-Parmar
-</div>
+ <!-- Footer -->
+ <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="" target="_blank" class="footer-link fw-medium">Alpha</a>
+                </div>
+                <div class="d-none d-lg-inline-block">
+                  <a href="" class="footer-link me-4" target="_blank">Alpha</a>
+                  <a href="" target="_blank" class="footer-link me-4"> Alpha</a>
+
+                  <a
+                    href=""
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="footer-link"
+                    >Alpha</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->

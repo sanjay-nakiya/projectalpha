@@ -1,44 +1,80 @@
-<?php 
-//include 'error.php';
+<?php
+include 'path.php';
+include 'error.php';
 session_start();
 // Include database connection file
 include_once('controller/database/db.php');
 if (!isset($_SESSION['ID'])) {
 	include 'logout.php';
-    exit();
+	exit();
 }
-if(0==$_SESSION['ROLE']){
+if (0 == $_SESSION['ROLE']) {
 ?>
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $pn; ?>| Dashboard</title>
-	<?php include 'css.php'; ?>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><?php echo $pn; ?>| Dashboard</title>
+		<?php include 'css.php'; ?>
+	</head>
 
-<body>
-	<?php include 'menu.php'; ?>
+	<body>
 
-	<div class="container ">
-		<div class="row mt-1">
-			<?php include 'slider.php'; ?>
+		<!-- Layout wrapper -->
+		<div class="layout-wrapper layout-content-navbar">
+			<div class="layout-container">
+				<!-- Menu -->
+				<?php include 'menu.php'; ?>
+				<!-- / Menu -->
+
+				<!-- Layout container -->
+				<div class="layout-page">
+					<!-- Navbar -->
+					<?php include 'navbar.php'; ?>
+					<!-- / Navbar -->
+
+					<!-- Content wrapper -->
+					<div class="content-wrapper">
+						<!-- Content -->
+
+						<div class="container-xxl flex-grow-1 container-p-y">
+							<div class="row">
+
+
+
+							</div>
+						</div>
+
+					</div>
+					<!-- / Content -->
+
+					<!-- Footer -->
+					<?php include 'footer.php';  ?>
+					<!-- / Footer -->
+
+					<div class="content-backdrop fade"></div>
+				</div>
+				<!-- Content wrapper -->
+			</div>
+			<!-- / Layout page -->
 		</div>
-		
-       
-	</div>
-    <?php include 'footer.php'; ?>
-	
 
-	<?php include 'js.php'; ?>
-</body>
+		<!-- Overlay -->
+		<div class="layout-overlay layout-menu-toggle"></div>
+		</div>
+		<!-- / Layout wrapper -->
 
-</html>
 
-<?php }else{
-            include 'logout.php';
-        }
-        
-        ?>
+
+		<?php include 'js.php'; ?>
+	</body>
+
+	</html>
+
+<?php } else {
+	include 'logout.php';
+}
+
+?>
