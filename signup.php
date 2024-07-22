@@ -32,97 +32,71 @@ if (isset($_POST['submit'])) {
   <?php include($path.'/admin/css.php'); ?>
 </head>
 
-<body>
-
-	 <!-- Content -->
-
-   <div class="container-xxl">
-      <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner">
-          <!-- Register Card -->
-          <div class="card">
-            <div class="card-body">
-              <!-- Logo -->
-              <div class="app-brand justify-content-center">
-                <a href="index.php" class="app-brand-link gap-2">
-                  
-                  <span class="app-brand-text demo text-body fw-bold">Alpha</span>
-                </a>
-              </div>
-              <form id="formAuthentication" class="mb-3" action="signup.php" method="POST">
-              <div class="mb-3">
-                  <label for="fname" class="form-label">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="fname"
-                    name="fname"
-                    placeholder="Enter your Name"
-                    autofocus />
+<body class="account-page">
+<div class="main-wrapper">
+        <div class="account-content">
+            <div class="login-wrapper">
+                <div class="login-content">
+                    <form class="login-userset" action="" method="POST">
+                        <div class="login-logo">
+                            <img src="<?php echo $pn; ?>/admin/assets/img/logo.png" alt="img">
+                        </div>
+                        <div class="login-userheading">
+                            <h3>Create an Account</h3>
+                            <h4>Continue where you left off</h4>
+                        </div>
+                        <div class="form-login">
+                            <label>Full Name</label>
+                            <div class="form-addons">
+                                <input type="text" name="fname" placeholder="Enter your full name">
+                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/users1.svg" alt="img">
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <label>Surname</label>
+                            <div class="form-addons">
+                                <input type="text" name="lname" placeholder="Enter your full name">
+                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/users1.svg" alt="img">
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <label>Email</label>
+                            <div class="form-addons">
+                                <input type="email" name="email" placeholder="Enter your email address">
+                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/mail.svg" alt="img">
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <label>username</label>
+                            <div class="form-addons">
+                                <input type="text" name="username" placeholder="Enter your user address">
+                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/mail.svg" alt="img">
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <label>Password</label>
+                            <div class="pass-group">
+                                <input type="password" class="pass-input" placeholder="Enter your password">
+                                <span class="fas toggle-password fa-eye-slash"></span>
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <button class="btn btn-login"  type="submit" name="submit" >Sign Up</button>
+                        </div>
+                        <div class="signinform text-center">
+                            <h4>Already a user? <a href="signin.html" class="hover-a">Sign In</a></h4>
+                        </div>
+                    </form>
+                    
                 </div>
-                <div class="mb-3">
-                  <label for="surname" class="form-label">Surname</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lname"
-                    name="lname"
-                    placeholder="Enter your Name"
-                    autofocus />
+                <div class="login-img">
+                    <img src="<?php echo $pn; ?>/admin/assets/img/login.jpg" alt="img">
                 </div>
-                
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
-                </div>
-                <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
-                    autofocus />
-                </div>
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="password">Password</label>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password" />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                    <label class="form-check-label" for="terms-conditions">
-                      I agree to
-                      <a href="javascript:void(0);">privacy policy & terms</a>
-                    </label>
-                  </div>
-                </div>
-                <button class="btn btn-primary d-grid w-100"  type="submit" name="submit" >Sign up</button>
-              </form>
-
-              <p class="text-center">
-                <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
-                  <span>Sign in instead</span>
-                </a>
-              </p>
             </div>
-          </div>
-          <!-- Register Card -->
         </div>
-      </div>
     </div>
+
+
 
     <!-- / Content -->
 	

@@ -1,174 +1,326 @@
 <?php
 include 'path.php';
-include 'error.php';
+//include 'error.php';
 session_start();
 // Include database connection file
 include_once('controller/database/db.php');
 if (!isset($_SESSION['ID'])) {
-	include 'logout.php';
-	exit();
+  include 'logout.php';
+  exit();
 }
 if (0 == $_SESSION['ROLE']) {
 ?>
-	<!DOCTYPE html>
-	<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?php echo $pn; ?>| Dashboard</title>
-		<?php include 'css.php'; ?>
-	</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $pn; ?>| Dashboard</title>
+    <?php include 'css.php'; ?>
+  </head>
 
-	<body>
+  <body>
+   
+    <div class="main-wrapper">
+      <?php include 'header.php'; ?>
 
-		<!-- Layout wrapper -->
-		<div class="layout-wrapper layout-content-navbar">
-			<div class="layout-container">
-				<!-- Menu -->
-				<?php //include 'menu.php'; ?>
-				<!-- / Menu -->
+      <?php include 'menu.php'; ?>
 
-				<!-- Layout container -->
-				<div class="layout-page">
-					<!-- Navbar -->
-					<?php include 'navbar.php'; ?>
-					<!-- / Navbar -->
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="dash-widget">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
+                  <h6>Total Purchase Due</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="dash-widget dash1">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h5>$<span class="counters" data-count="4385.00">$4,385.00</span></h5>
+                  <h6>Total Sales Due</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="dash-widget dash2">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h5>$<span class="counters" data-count="385656.50">385,656.50</span></h5>
+                  <h6>Total Sale Amount</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="dash-widget dash3">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h5>$<span class="counters" data-count="40000.00">400.00</span></h5>
+                  <h6>Total Sale Amount</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+              <div class="dash-count">
+                <div class="dash-counts">
+                  <h4>100</h4>
+                  <h5>Customers</h5>
+                </div>
+                <div class="dash-imgs">
+                  <i data-feather="user"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+              <div class="dash-count das1">
+                <div class="dash-counts">
+                  <h4>100</h4>
+                  <h5>Suppliers</h5>
+                </div>
+                <div class="dash-imgs">
+                  <i data-feather="user-check"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+              <div class="dash-count das2">
+                <div class="dash-counts">
+                  <h4>100</h4>
+                  <h5>Purchase Invoice</h5>
+                </div>
+                <div class="dash-imgs">
+                  <i data-feather="file-text"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+              <div class="dash-count das3">
+                <div class="dash-counts">
+                  <h4>105</h4>
+                  <h5>Sales Invoice</h5>
+                </div>
+                <div class="dash-imgs">
+                  <i data-feather="file"></i>
+                </div>
+              </div>
+            </div>
+          </div>
 
-					<!-- Content wrapper -->
-					<div class="content-wrapper">
-						<!-- Content -->
-
-						<div class="container-xxl flex-grow-1 container-p-y">
-							<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Order Statistics</h5>
-                        <small class="text-muted">42.82k Total Sales</small>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="orederStatistics"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="d-flex flex-column align-items-center gap-1">
-                          <h2 class="mb-2">8,258</h2>
-                          <span>Total Orders</span>
-                        </div>
-                        <div id="orderStatisticsChart"></div>
-                      </div>
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-primary"
-                              ><i class="bx bx-mobile-alt"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Electronic</h6>
-                              <small class="text-muted">Mobile, Earbuds, TV</small>
-                            </div>
-                            <div class="user-progress">
-                              <small class="fw-medium">82.5k</small>
-                            </div>
-                          </div>
+          <div class="row">
+            <div class="col-lg-7 col-sm-12 col-12 d-flex">
+              <div class="card flex-fill">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                  <h5 class="card-title mb-0">Purchase & Sales</h5>
+                  <div class="graph-sets">
+                    <ul>
+                      <li>
+                        <span>Sales</span>
+                      </li>
+                      <li>
+                        <span>Purchase</span>
+                      </li>
+                    </ul>
+                    <div class="dropdown">
+                      <button class="btn btn-white btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        2022 <img src="assets/img/icons/dropdown.svg" alt="img" class="ms-2">
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item">2022</a>
                         </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Fashion</h6>
-                              <small class="text-muted">T-shirt, Jeans, Shoes</small>
-                            </div>
-                            <div class="user-progress">
-                              <small class="fw-medium">23.8k</small>
-                            </div>
-                          </div>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item">2021</a>
                         </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Decor</h6>
-                              <small class="text-muted">Fine Art, Dining</small>
-                            </div>
-                            <div class="user-progress">
-                              <small class="fw-medium">849k</small>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-secondary"
-                              ><i class="bx bx-football"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Sports</h6>
-                              <small class="text-muted">Football, Cricket Kit</small>
-                            </div>
-                            <div class="user-progress">
-                              <small class="fw-medium">99</small>
-                            </div>
-                          </div>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item">2020</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-							</div>
-						</div>
+                <div class="card-body">
+                  <div id="sales_charts"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-sm-12 col-12 d-flex">
+              <div class="card flex-fill">
+                <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                  <h4 class="card-title mb-0">Recently Added Products</h4>
+                  <div class="dropdown">
+                    <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="dropset">
+                      <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li>
+                        <a href="productlist.html" class="dropdown-item">Product List</a>
+                      </li>
+                      <li>
+                        <a href="addproduct.html" class="dropdown-item">Product Add</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive dataview">
+                    <table class="table datatable ">
+                      <thead>
+                        <tr>
+                          <th>Sno</th>
+                          <th>Products</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td class="productimgname">
+                            <a href="productlist.html" class="product-img">
+                              <img src="assets/img/product/product22.jpg" alt="product">
+                            </a>
+                            <a href="productlist.html">Apple Earpods</a>
+                          </td>
+                          <td>$891.2</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td class="productimgname">
+                            <a href="productlist.html" class="product-img">
+                              <img src="assets/img/product/product23.jpg" alt="product">
+                            </a>
+                            <a href="productlist.html">iPhone 11</a>
+                          </td>
+                          <td>$668.51</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td class="productimgname">
+                            <a href="productlist.html" class="product-img">
+                              <img src="assets/img/product/product24.jpg" alt="product">
+                            </a>
+                            <a href="productlist.html">samsung</a>
+                          </td>
+                          <td>$522.29</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td class="productimgname">
+                            <a href="productlist.html" class="product-img">
+                              <img src="assets/img/product/product6.jpg" alt="product">
+                            </a>
+                            <a href="productlist.html">Macbook Pro</a>
+                          </td>
+                          <td>$291.01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-0">
+            <div class="card-body">
+              <h4 class="card-title">Expired Products</h4>
+              <div class="table-responsive dataview">
+                <table class="table datatable ">
+                  <thead>
+                    <tr>
+                      <th>SNo</th>
+                      <th>Product Code</th>
+                      <th>Product Name</th>
+                      <th>Brand Name</th>
+                      <th>Category Name</th>
+                      <th>Expiry Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><a href="javascript:void(0);">IT0001</a></td>
+                      <td class="productimgname">
+                        <a class="product-img" href="productlist.html">
+                          <img src="assets/img/product/product2.jpg" alt="product">
+                        </a>
+                        <a href="productlist.html">Orange</a>
+                      </td>
+                      <td>N/D</td>
+                      <td>Fruits</td>
+                      <td>12-12-2022</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><a href="javascript:void(0);">IT0002</a></td>
+                      <td class="productimgname">
+                        <a class="product-img" href="productlist.html">
+                          <img src="assets/img/product/product3.jpg" alt="product">
+                        </a>
+                        <a href="productlist.html">Pineapple</a>
+                      </td>
+                      <td>N/D</td>
+                      <td>Fruits</td>
+                      <td>25-11-2022</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><a href="javascript:void(0);">IT0003</a></td>
+                      <td class="productimgname">
+                        <a class="product-img" href="productlist.html">
+                          <img src="assets/img/product/product4.jpg" alt="product">
+                        </a>
+                        <a href="productlist.html">Stawberry</a>
+                      </td>
+                      <td>N/D</td>
+                      <td>Fruits</td>
+                      <td>19-11-2022</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><a href="javascript:void(0);">IT0004</a></td>
+                      <td class="productimgname">
+                        <a class="product-img" href="productlist.html">
+                          <img src="assets/img/product/product5.jpg" alt="product">
+                        </a>
+                        <a href="productlist.html">Avocat</a>
+                      </td>
+                      <td>N/D</td>
+                      <td>Fruits</td>
+                      <td>20-11-2022</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					</div>
-					<!-- / Content -->
-
-					<!-- Footer -->
-					<?php include 'footer.php';  ?>
-					<!-- / Footer -->
-
-					<div class="content-backdrop fade"></div>
-				</div>
-				<!-- Content wrapper -->
-			</div>
-			<!-- / Layout page -->
-		</div>
-
-		<!-- Overlay -->
-		<div class="layout-overlay layout-menu-toggle"></div>
-		</div>
-		<!-- / Layout wrapper -->
 
 
 
-		<?php include 'js.php'; ?>
-	</body>
 
-	</html>
+    <?php include 'js.php'; ?>
+  </body>
+
+  </html>
 
 <?php } else {
-	include 'logout.php';
+  include 'logout.php';
 }
 
 ?>
