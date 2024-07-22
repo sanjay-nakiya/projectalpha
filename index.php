@@ -25,9 +25,9 @@
             $_SESSION['ROLE'] = $row['user_role'];
             $_SESSION['USERNAME'] = $row['username'];
             if(0==$row['user_role']){
-            header("Location:admin/index.php");
+            header("Location:admin/dashboard.php");
             }elseif(1==$row['user_role']){
-                header("Location:admin/index.php");
+                header("Location:admin/dashboard.php");
             }elseif(2==$row['user_role']){
                 header("Location:dashboard.php");
             }
