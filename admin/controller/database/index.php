@@ -1,9 +1,9 @@
 <?php
 session_start();
 // Include database connection file
-include_once('controller/database/db.php');
+include_once('db.php');
 if (!isset($_SESSION['ID'])) {
-    header("Location:/project/projectalpha/index.php");
+    header("Location:/computer_vedas/saustudy/index.php");
     exit(); 
   
 }elseif(0 == $_SESSION['ROLE']) {
@@ -14,5 +14,5 @@ if (!isset($_SESSION['ID'])) {
     }
 } else {
    
-   header("Location:/project/projectalpha/index.php");
+   header("Location:/computer_vedas/saustudy/index.php");
 }
