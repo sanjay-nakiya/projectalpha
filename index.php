@@ -1,4 +1,5 @@
 <?php
+    include 'path.php';
     include 'admin/error.php';
   session_start();
   if (isset($_SESSION['ID'])) {
@@ -46,53 +47,82 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php echo $pn; ?></title>
-	<?php include 'css.php'; ?>
+	<?php include($path.'/admin/css.php'); ?>
 </head>
 
 <body>
+  <!-- Content -->
 
-	<div class="container-fluid   ">
-		
-		<div class="row  d-flex  justify-content-center  mt-3">
-		<div class="col-md-4  col-sm-12">
-						<div class="d-flex  justify-content-center  mt-3">
-							<img class="logo" src="asset/images/saurashtra-university-logo.png" alt="" srcset="">
-						</div>
-                        <form class="viral-card mt-3 aline-item-center p-2" action="" method="POST">
-                            
-                            <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="Email"><i
-                                    class="bi bi-envelope-at"></i></span>
-                                <input type="email" name="email" class="viral-card-1 m-1 p-2" placeholder="Email">
-                              </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="basic-addon1"><i
-                                    class="bi bi-person-circle"></i></span>
-                                <input type="text" name="username" class="viral-card-1 m-1 p-2" placeholder="Username">
-                              </div>
-                              <div class="input-group mb-3">
-                                <span class="input-group-text viral-card-2 m-1 p-2" id="basic-addon1"><i
-                                    class="bi bi-shield-lock"></i></span>
-                                <input type="password" name="password" class="viral-card-1 m-1 p-2" placeholder="Password">
-                              </div>
-                           
-                           <div class="mb-3 text-center">
-                            <button type="submit" name="submit" class="btn viral-card-2 ">login</button>
-                            </div>
-                            <div class="mb-3 text-center text-black">
-                            <h3>Yor Have No Account TO</h3>
-                            </div>
-                           
-                            <div class="mb-3 text-center">
-                            <a href="signup.php" type="submit" class="btn viral-card-2 ">Create Account</a>
-                            </div>
-                        </form>
-                    </div>
-		</div>
-	</div>
-	</div>
+  <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <!-- Register -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Logo -->
+              <div class="app-brand justify-content-center">
+                <a href="index.php" class="app-brand-link gap-2">
+                  
+                  <span class="app-brand-text demo text-body fw-bold">Alpha</span>
+                </a>
+              </div>
+             
+              <form id="formAuthentication" class="mb-3" action="" method="POST">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autofocus />
+                </div>
+                <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="password">Password</label>
+                    <a href="auth-forgot-password-basic.html">
+                      <small>Forgot Password?</small>
+                    </a>
+                  </div>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      name="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      aria-describedby="password" />
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary d-grid w-100" type="submit" name="submit">Sign in</button>
+                </div>
+              </form>
 
-	<?php include 'js.php'; ?>
+              <p class="text-center">
+                <span>New on our platform?</span>
+                <a href="auth-register-basic.html">
+                  <span>Create an account</span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- /Register -->
+        </div>
+      </div>
+    </div>
+
+    <!-- / Content -->
+	
+<?php include($path.'/admin/js.php'); ?>
 </body>
 
 </html>
