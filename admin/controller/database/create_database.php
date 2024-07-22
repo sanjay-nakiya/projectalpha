@@ -12,7 +12,7 @@ if (!$conn) {
 
 // Create database
 
-$sql = "CREATE DATABASE saustudy";
+$sql = "CREATE DATABASE alpha";
 if (mysqli_query($conn, $sql)) {
   echo "Database created successfully";
 } else {
