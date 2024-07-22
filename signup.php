@@ -30,77 +30,78 @@ if (isset($_POST['submit'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php echo $pn; ?>|Signup</title>
   <?php include($path.'/admin/css.php'); ?>
+  <style>
+body {
+  background-image: url('admin/assets/img/login-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
 </head>
 
-<body class="account-page">
-<div class="main-wrapper">
-        <div class="account-content">
-            <div class="login-wrapper">
-                <div class="login-content">
-                    <form class="login-userset" action="" method="POST">
-                        <div class="login-logo">
-                            <img src="<?php echo $pn; ?>/admin/assets/img/logo.png" alt="img">
-                        </div>
-                        <div class="login-userheading">
-                            <h3>Create an Account</h3>
-                            <h4>Continue where you left off</h4>
-                        </div>
-                        <div class="form-login">
-                            <label>Full Name</label>
-                            <div class="form-addons">
-                                <input type="text" name="fname" placeholder="Enter your full name">
-                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/users1.svg" alt="img">
-                            </div>
-                        </div>
-                        <div class="form-login">
-                            <label>Surname</label>
-                            <div class="form-addons">
-                                <input type="text" name="lname" placeholder="Enter your full name">
-                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/users1.svg" alt="img">
-                            </div>
-                        </div>
-                        <div class="form-login">
-                            <label>Email</label>
-                            <div class="form-addons">
-                                <input type="email" name="email" placeholder="Enter your email address">
-                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/mail.svg" alt="img">
-                            </div>
-                        </div>
-                        <div class="form-login">
-                            <label>username</label>
-                            <div class="form-addons">
-                                <input type="text" name="username" placeholder="Enter your user address">
-                                <img src="<?php echo $pn; ?>/admin/assets/img/icons/mail.svg" alt="img">
-                            </div>
-                        </div>
-                        <div class="form-login">
-                            <label>Password</label>
-                            <div class="pass-group">
-                                <input type="password" class="pass-input" placeholder="Enter your password">
-                                <span class="fas toggle-password fa-eye-slash"></span>
-                            </div>
-                        </div>
-                        <div class="form-login">
-                            <button class="btn btn-login"  type="submit" name="submit" >Sign Up</button>
-                        </div>
-                        <div class="signinform text-center">
-                            <h4>Already a user? <a href="signin.html" class="hover-a">Sign In</a></h4>
-                        </div>
-                    </form>
-                    
+<body>
+<section class=" py-3 py-md-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        
+        <div class="card border border-light-subtle rounded-4">
+          <div class="card-body p-3 p-md-4 p-xl-5">
+            <form action="#!">
+              <h5 class="text-center mb-4">Sign Up</h5>
+              <div class="row gy-3 overflow-hidden">
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
+                    <label for="username" class="form-label">Fname</label>
+                  </div>
                 </div>
-                <div class="login-img">
-                    <img src="<?php echo $pn; ?>/admin/assets/img/login.jpg" alt="img">
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
+                    <label for="username" class="form-label">Lname</label>
+                  </div>
                 </div>
-            </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
+                    <label for="username" class="form-label">Username</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                    <label for="password" class="form-label">Password</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
+                    <label class="form-check-label text-secondary" for="remember_me">
+                      Keep me logged in
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" type="submit">Log in</button>
+                  </div>
+                </div>
+                <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
+          <a href="index.php" class="link-primary text-decoration-none">Log-in</a>
+          <a href="#!" class="link-primary text-decoration-none">Forgot password</a>
         </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
     </div>
-
-
-
-    <!-- / Content -->
-	
-  <?php include($path.'/admin/js.php'); ?>
+  </div>
+</section>
+ 
 </body>
 
 </html>

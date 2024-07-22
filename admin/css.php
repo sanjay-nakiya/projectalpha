@@ -12,11 +12,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo $pn; ?>/admin/assets/img/favicon.jpg">
 
 <link rel="stylesheet" href="<?php echo $pn; ?>/admin/assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="<?php echo $pn; ?>/admin/assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="<?php echo $pn; ?>/admin/assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="<?php echo $pn; ?>/admin/assets/css/style.css">
 </head>
 <body>
     

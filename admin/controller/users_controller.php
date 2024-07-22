@@ -1,6 +1,7 @@
 <?php 
 class users
     {
+        private $db;
         private $conn = '';
         function __construct()
         {
