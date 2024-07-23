@@ -30,84 +30,49 @@ if (isset($_POST['submit'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php echo $pn; ?>|Signup</title>
   <?php include($path.'/admin/css.php'); ?>
-  <style>
-body {
-  background-image: url('admin/assets/img/login-bg.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: 100% 100%;
-}
-</style>
+
+
 </head>
 
-<body>
-<section class=" py-3 py-md-5 py-xl-8">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-        
-        <div class="card border border-light-subtle rounded-4">
-          <div class="card-body p-3 p-md-4 p-xl-5">
-            <form action="#!">
-              <h5 class="text-center mb-4">Sign Up</h5>
-              <div class="row gy-3 overflow-hidden">
-                <div class="col-6">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
-                    <label for="username" class="form-label">Fname</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
-                    <label for="username" class="form-label">Lname</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
-                    <label for="email" class="form-label">email</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
-                    <label for="username" class="form-label">Username</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                    <label for="password" class="form-label">Password</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
-                    <label class="form-check-label text-secondary" for="remember_me">
-                      Keep me logged in
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit">Log in</button>
-                  </div>
-                </div>
-                <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
-          <a href="index.php" class="link-primary text-decoration-none">Log-in</a>
-          <a href="#!" class="link-primary text-decoration-none">Forgot password</a>
+<body class="login-page bg-body-secondary">
+<div class="register-box">
+        <div class="register-logo"> <a href="index.php"><b>Alpha</b></a> </div> <!-- /.register-logo -->
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="register-box-msg">Register a new membership</p>
+                <form action="" method="post">
+                    <div class="input-group mb-3"> <input type="text" nam="fname" class="form-control" placeholder="Name">
+                        <div class="input-group-text"> <span class="bi bi-person"></span> </div>
+                    </div>
+                    <div class="input-group mb-3"> <input type="text" name="lname" class="form-control" placeholder="surname">
+                        <div class="input-group-text"> <span class="bi bi-person"></span> </div>
+                    </div>
+                    <div class="input-group mb-3"> <input type="email" class="form-control" name="email" placeholder="Email">
+                        <div class="input-group-text"> <span class="bi bi-envelope"></span> </div>
+                    </div>
+                    <div class="input-group mb-3"> <input type="text" name="username" class="form-control" placeholder="User Name">
+                        <div class="input-group-text"> <span class="bi bi-person"></span> </div>
+                    </div>
+                    <div class="input-group mb-3"> <input type="password" class="form-control" name="password" placeholder="Password">
+                        <div class="input-group-text"> <span class="bi bi-lock-fill"></span> </div>
+                    </div> <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">
+                                    I agree to the <a href="#">terms</a> </label> </div>
+                        </div> <!-- /.col -->
+                        <div class="col-4">
+                            <div class="d-grid gap-2"> <button type="submit" name="submit" class="btn btn-primary">Sign In</button> </div>
+                        </div> <!-- /.col -->
+                    </div> <!--end::Row-->
+                </form>
+                <div class="social-auth-links text-center mb-3 d-grid gap-2">
+                    <a href="index.php" class="btn btn-primary"> I already have a membership </a>
+                </div> 
+            </div> <!-- /.register-card-body -->
         </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</section>
- 
+    </div> <!-- /.register-box --> <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <?php include($path.'/admin/js.php'); ?> 
 </body>
 
 </html>

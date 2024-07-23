@@ -1,32 +1,9 @@
- <!-- Footer -->
- <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="" target="_blank" class="footer-link fw-medium">Alpha</a>
-                </div>
-                <div class="d-none d-lg-inline-block">
-                  <a href="" class="footer-link me-4" target="_blank">Alpha</a>
-                  <a href="" target="_blank" class="footer-link me-4"> Alpha</a>
-
-                  <a
-                    href=""
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="footer-link"
-                    >Alpha</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
+ <!--begin::Footer-->
+ <footer class="app-footer"> <!--begin::To the end-->
+            <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
+                Copyright &copy; 2024&nbsp;
+                <a href="index.php" class="text-decoration-none">Alpha</a>.
+            </strong>
+            All rights reserved.
+            <!--end::Copyright-->
+        </footer> <!--end::Footer-->

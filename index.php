@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
-        <form action="../index3.html" method="post">
+        <form action="" method="POST">
           <div class="input-group mb-3"> <input type="text" class="form-control" name="username" placeholder="username">
             <div class="input-group-text"> <span class="bi bi-envelope"></span> </div>
           </div>
@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                 </label> </div>
             </div> <!-- /.col -->
             <div class="col-6">
-              <div class="d-grid gap-2"> <button type="submit" class="btn btn-primary">Sign In</button> </div>
+              <div class="d-grid gap-2"> <button type="submit" name="submit" class="btn btn-primary">Sign In</button> </div>
             </div> <!-- /.col -->
           </div> <!--end::Row-->
         </form>
