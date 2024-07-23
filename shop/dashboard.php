@@ -8,7 +8,7 @@ if (!isset($_SESSION['ID'])) {
   include 'logout.php';
   exit();
 }
-if (0 == $_SESSION['ROLE']) {
+if (3 == $_SESSION['ROLE']) {
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -16,7 +16,7 @@ if (0 == $_SESSION['ROLE']) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pn; ?>| Dashboard</title>
+    <title>ડેશબોર્ડ</title>
     <?php include 'css.php'; ?>
   </head>
 

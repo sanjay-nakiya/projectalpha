@@ -8,7 +8,7 @@ if (!isset($_SESSION['ID'])) {
   include 'logout.php';
   exit();
 }
-if (0 == $_SESSION['ROLE']) {
+if (3 == $_SESSION['ROLE']) {
 ?>
   <!DOCTYPE html>
   <html lang="en">
