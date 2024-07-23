@@ -11,8 +11,8 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="./index.html" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v1</p>
+                        <li class="nav-item"> <a href="customer.php" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                                <p>ગ્રાહક</p>
                             </a> </li>
                         <li class="nav-item"> <a href="./index2.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                 <p>Dashboard v2</p>

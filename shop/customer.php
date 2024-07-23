@@ -36,13 +36,13 @@ if (3 == $_SESSION['ROLE']) {
                 <div class="container-fluid"> <!--begin::Row-->
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="mb-0">ગ્રાહક</h3>
+                            <h3 class="mb-0"> બધા ગ્રાહક </h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                                 <li class="breadcrumb-item"><a href="#">હોમ</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    ગ્રાહક 
+                                    બધા ગ્રાહક 
                                 </li>
                             </ol>
                         </div>
@@ -56,6 +56,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <h3 class="card-title">બધા ગ્રાહક </h3>
+                                    <a href="add-customer.php" class="btn btn-primary position-absolute top-0 end-0 m-2"> નવા ગ્રાહક ઉમેરો</a>                            
                                 </div> <!-- /.card-header -->
                                 <div class="card-body p-0">
                                     <table class="table table-striped">
