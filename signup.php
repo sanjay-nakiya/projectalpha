@@ -1,7 +1,7 @@
 <?php 
 include 'path.php';
 include 'admin/controller/database/db.php'; 
-//include 'admin/error.php';
+include 'admin/error.php';
 if (isset($_POST['submit'])) {
     
  
@@ -65,11 +65,17 @@ body {
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
+                    <label for="email" class="form-label">email</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="username" id="username" placeholder="username" required>
                     <label for="username" class="form-label">Username</label>
                   </div>
                 </div>
-                <div class="col-12">
+                <div class="col-6">
                   <div class="form-floating mb-3">
                     <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
                     <label for="password" class="form-label">Password</label>
