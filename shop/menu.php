@@ -18,7 +18,7 @@
                             </a> </li>
                     </ul>
                 </li>
-                <li class="nav-item"> <a href="customer.php" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                <li class="nav-item"> <a href="customer-list.php" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
                                 <p>ગ્રાહક</p>
                             </a> </li>
 
