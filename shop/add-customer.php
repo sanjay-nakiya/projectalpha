@@ -88,7 +88,7 @@ if (3 == $_SESSION['ROLE']) {
                                             
                                         </div> <!--end::Row-->
                                     </div> <!--end::Body--> <!--begin::Footer-->
-                                    <div class="card-footer "> <button class="btn btn-info" type="submit">ઉમેરો</button> </div> <!--end::Footer-->
+                                    <div class="card-footer "> <button class="btn btn-primary" type="submit">ઉમેરો</button> </div> <!--end::Footer-->
                                 </form> <!--end::Form--> <!--begin::JavaScript-->
                                 <script>
                                     // Example starter JavaScript for disabling form submissions if there are invalid fields
