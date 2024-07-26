@@ -4,7 +4,7 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open"> <a href="index.php" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
+                <li class="nav-item "> <a href="index.php" class="nav-link "> <i class="nav-icon btn-primary bi bi-house"></i>
                         <p>
                             હોમ
                             
@@ -12,8 +12,11 @@
                     </a>
                    
                 </li>
-                <li class="nav-item"> <a href="customer-list.php" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
-                                <p>ગ્રાહક</p>
+                <li class="nav-item"> <a href="customer-list.php" class="nav-link "> <i class="nav-icon bi bi-card-checklist"></i>
+                                <p>બધા ગ્રાહક</p>
+                            </a> </li>
+                            <li class="nav-item"> <a href="add-customer.php" class="nav-link "> <i class="nav-icon bi bi-person-fill-add"></i>
+                                <p>ગ્રાહક ઉમેરો</p>
                             </a> </li>
 
             </ul> <!--end::Sidebar Menu-->
