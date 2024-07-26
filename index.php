@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
         header("Location:dashboard.php");
       }
      elseif (3 == $row['user_role']) {
-      header("Location:shop/dashboard.php");
+      header("Location:shop/index.php");
     }
       die();
     } else {
