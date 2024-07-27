@@ -9,6 +9,7 @@ if (!isset($_SESSION['ID'])) {
   exit();
 }
 if (3 == $_SESSION['ROLE']) {
+    include 'controller/customer_controller.php';
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -70,18 +71,31 @@ if (3 == $_SESSION['ROLE']) {
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                        //$shop=$_SESSION['ID']; echo $shop;
+                $data = $obj->customerview();
+                while ($row = mysqli_fetch_assoc($data)) {
+                    ?>
                                             <tr class="align-middle">
                                                 <td>1</td>
-                                                <td>01</td>
+                                                <td><?php echo $row["id"]; ?></td>
                                                 <td>
-                                                   વિકાશભાઈ
+                                                <?php echo $row["fname"]; ?> <?php echo $row["lname"]; ?>
                                                 </td>
                                                 <td>
-                                                    ૫૦૦ 
+                                                    
                                                 </td>
-                                                <td>Edit</td>
+                                                <td>   <form action="" method="POST">
+                            <input type="number" value="<?php echo $row["id"]; ?>" name="id" hidden>
+                            <button class="btn btn-warning" type="submit" name=""
+                                onclick="return confirm('are you sure to edit')"><i
+                                    class="bi bi-pencil-square"></i></button>
+
+                            <button class="btn btn-danger" type="submit" name="delete"
+                                onclick="return confirm('are you sure to delete')"><i class="bi bi-trash3"></i></button>
+                        </form></td>
                                             </tr>
-                                            
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div> <!-- /.card-body -->

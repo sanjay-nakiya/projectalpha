@@ -39,8 +39,9 @@ class customer
     }
     function customerview()
     {
-            
-        $sql = "SELECT * FROM `customer`";
+        $shop=$_SESSION['ID'];  
+        
+        $sql = "SELECT * FROM `customer` WHERE shop='$shop'";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -81,7 +82,7 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $res = $obj->delete($id);
     if ($res) {
-        header("location:customer.php");
+        header("location:customer-list.php");
     } else {
         echo "not deleted";
     }
