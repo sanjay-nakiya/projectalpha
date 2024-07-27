@@ -15,6 +15,7 @@ if (!$conn) {
 $sql = "CREATE TABLE customer 
 (
     id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    shop INT(4) NOT NULL,
     fname VARCHAR(30) NOT NULL,
     lname VARCHAR(30) NOT NULL,   
     village VARCHAR(255) NOT NULL,
@@ -22,9 +23,8 @@ $sql = "CREATE TABLE customer
     email VARCHAR(255) NOT NULL,
     username VARCHAR(10) NOT NULL,
     pass VARCHAR(255) NOT NULL,
-    user_role INT(1) NOT NULL DEFAULT '4',
-    paid INT(10) NOT NULL DEFAULT '0',
-    unpaid INT(10) NOT NULL DEFAULT '0'
+    user_role INT(1) NOT NULL DEFAULT '4'
+    
 )";
 
 if (mysqli_query($conn, $sql)) {

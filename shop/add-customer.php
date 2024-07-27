@@ -9,29 +9,8 @@ if (!isset($_SESSION['ID'])) {
   exit();
 }
 if (3 == $_SESSION['ROLE']) {
-
-    
-if (isset($_POST['submit'])) {
-    
- 
-    $fname= $conn->real_escape_string($_POST['fname']);
-    $lname= $conn->real_escape_string($_POST['lname']);
-    $village= $conn->real_escape_string($_POST['village']);
-    $mobile= $conn->real_escape_string($_POST['mobile']);
-    $email= $conn->real_escape_string($_POST['email']);
-    $username= $conn->real_escape_string($_POST['username']);
-    $pass = $conn->real_escape_string(md5($_POST['password']));
-    //$role     = $conn->real_escape_string($_POST['role']);
-    $sql  = "INSERT INTO `customer`(`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$fname','$lname','$village','$mobile','$email','$username','$pass')";
-   
-    $result=mysqli_query($conn,$sql);
-    if ($result==true) {
-      header("Location:customer-list.php");
-      die();
-    }else{
-      $errorMsg  = "customer are not Registred..Please Try again";
-    }   
-  }
+    $shop=$_SESSION['ID'];
+    include 'controller/customer_controller.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,6 +76,8 @@ if (isset($_POST['submit'])) {
                                     <div class="card-body">
                                         <!--begin::Row-->
                                         <div class="row g-3">
+                                        <input type="hidden" name="shop"
+                                        class="form-control" id="validationCustom01" value="<?php echo $shop; ?>" required>
                                             <!--begin::Col-->
                                             <div class="col-md-6"> <label for="validationCustom01"
                                                     class="form-label"></label>નામ <input type="text" name="fname"
