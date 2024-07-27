@@ -39,12 +39,20 @@ class customer
     }
     function customerview()
     {
-        $shop=$_SESSION['ID'];  
-        
+        $shop=$_SESSION['ID'];        
         $sql = "SELECT * FROM `customer` WHERE shop='$shop'";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
+    function totalcustomer()
+    {
+        $shop=$_SESSION['ID'];        
+        $sql = "SELECT * FROM `customer` WHERE shop='$shop'";       
+        $res = mysqli_query($this->db, $sql);
+       
+        return $res;
+    }
+
 }
 $obj = new customer();
 
