@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
         </form>
         <div class="social-auth-links text-center mb-3 d-grid gap-2">
           <p>- OR -</p> <a href="#" class="btn btn-primary"> <i class="bi bi-password me-2"></i> I forgot my password
-          </a> <a href="#" class="btn btn-danger"> <i class="bi bi-memer me-2"></i> Register a new membership
+          </a> <a href="signup.php" class="btn btn-danger"> <i class="bi bi-memer me-2"></i> Register a new membership
           </a>
         </div> <!-- /.social-auth-links -->
         

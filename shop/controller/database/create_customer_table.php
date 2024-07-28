@@ -23,6 +23,7 @@ $sql = "CREATE TABLE customer
     email VARCHAR(255) NOT NULL,
     username VARCHAR(10) NOT NULL,
     pass VARCHAR(255) NOT NULL,
+    create_at DATE NOT NULL,
     user_role INT(1) NOT NULL DEFAULT '4'
     
 )";

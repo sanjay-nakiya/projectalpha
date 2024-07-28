@@ -150,12 +150,12 @@ if (3 == $_SESSION['ROLE']) {
                                             <!--end::Col-->
                                              <!--begin::Col-->
                                              <div class="col-md-6"> <label for="validationCustomUsername"
-                                                    class="form-label">પાસવર્ડ</label>
-                                                <div class="input-group has-validation"><input type="date" name="date"  value="<?php echo date('Y-m-d'); ?>"
+                                                    class="form-label">તારીખ</label>
+                                                <div class="input-group has-validation"><input type="date" name="createat"  value="<?php echo date('Y-m-d'); ?>"
                                                         class="form-control" id="validationCustomUsername"
                                                         aria-describedby="inputGroupPrepend" required>
                                                     <div class="invalid-feedback">
-                                                        પાસવર્ડ
+                                                        તારીખ ઉમેરો
                                                     </div>
                                                 </div>
                                             </div>
