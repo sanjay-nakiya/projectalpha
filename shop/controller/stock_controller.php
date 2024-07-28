@@ -48,8 +48,7 @@ class stock
     {
         $shop=$_SESSION['ID'];        
         $sql = "SELECT * FROM `stock` WHERE shop='$shop'";       
-        $res = mysqli_query($this->db, $sql);
-       
+        $res = mysqli_query($this->db, $sql);       
         return $res;
     }
 
