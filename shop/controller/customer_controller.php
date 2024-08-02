@@ -12,9 +12,9 @@ class customer
         $this->db = $conn;
 
     }
-    function insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass,$createat)
+    function insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass)
     {
-        $sql = "INSERT INTO `customer`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`, `create_at`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass','$createat')";
+        $sql = "INSERT INTO `customer`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
     $username= $conn->real_escape_string($_POST['username']);
     $pass = $conn->real_escape_string(md5($_POST['password']));
     $createat = $conn->$_POST['createat'];
-    $res = $obj->insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass,$createat);
+    $res = $obj->insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass);
     if ($res) {
         header("location:customer-list.php");
     } else {
