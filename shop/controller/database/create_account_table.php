@@ -14,9 +14,15 @@ if (!$conn) {
 // sql to create Users table
 $sql = "CREATE TABLE account 
 (
-    id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    shop INT(4) NOT NULL,
-    customer_id int(4) NOT NULL,
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    shop INT(6) NOT NULL,
+    customer_id INT(6) NOT NULL,
+    ac_date DATE NOT NULL,
+    detail INT(6) NOT NULL,
+    cradit INT(6) NOT NULL,
+    dabit INT(6) NOT NULL,
+    balance INT(6) NOT NULL
+    
 )";
 
 if (mysqli_query($conn, $sql)) {
@@ -25,6 +31,6 @@ if (mysqli_query($conn, $sql)) {
   echo "Error creating table: " . mysqli_error($conn);
 }
 
-
+// $dob = date('Y-m-d', strtotime($_POST['dateofbirth']));
 mysqli_close($conn);
 ?>

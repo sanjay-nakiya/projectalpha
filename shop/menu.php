@@ -18,6 +18,9 @@
                             <li class="nav-item"> <a href="add-customer.php" class="nav-link "> <i class="nav-icon bi bi-person-fill-add"></i>
                                 <p>ગ્રાહક ઉમેરો</p>
                             </a> </li>
+                            <li class="nav-item"> <a href="account.php" class="nav-link "> <i class="nav-icon bi bi-person-fill-add"></i>
+                                <p>ખાતુ</p>
+                            </a> </li>
 
             </ul> <!--end::Sidebar Menu-->
         </nav>
