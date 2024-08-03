@@ -58,23 +58,34 @@ if (3 == $_SESSION['ROLE']) {
             <!--end::App Content Header-->
             <!--begin::App Content-->
             <div class="app-content">
-            <div class="container-fluid">
-                    <h5 class="mb-2">ખાતુ</h5> <!--begin::Row-->
+                <div class="container-fluid">
+
+                    <h5 class="mb-2">ખાતુ</h5>
+                    <!--begin::Row-->
                     <div class="row">
-                        <div class="col-12">
-                            <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm"> <i class="bi bi-gear-fill"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">CPU Traffic</span> <span class="info-box-number">
-                                        10
-                                        <small>%</small> </span> </div> <!-- /.info-box-content -->
-                            </div> <!-- /.info-box -->
-                        </div> <!-- /.col -->
+                        <div class="info-box">
+                            <div class="col-3">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                                    class="d-block w-100 rounded-circle">
+                            </div>
+                            <div class="col-9">
                         
-                    </div> <!--end::Row--> <!-- =========================================================== -->
-                    <h5 class="mt-4 mb-2">Info Box With </h5> <!--begin::Row-->
+                            </div>
+                        </div>
+                       
+                        
+
+                    </div>
+                    <!--end::Row-->
+                    <!-- =========================================================== -->
+                    <h5 class="mt-4 mb-2">Info Box With </h5>
+                    <!--begin::Row-->
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i class="bi bi-bookmark-fill"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Bookmarks</span> <span class="info-box-number">41,410</span>
+                            <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-bookmark-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Bookmarks</span> <span
+                                        class="info-box-number">41,410</span>
                                     <div class="progress">
                                         <div class="progress-bar" style="width: 70%"></div>
                                     </div> <span class="progress-description">
@@ -84,8 +95,10 @@ if (3 == $_SESSION['ROLE']) {
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-success bg-gradient"> <span class="info-box-icon"> <i class="bi bi-hand-thumbs-up"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Likes</span> <span class="info-box-number">41,410</span>
+                            <div class="info-box text-bg-success bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-hand-thumbs-up"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Likes</span> <span
+                                        class="info-box-number">41,410</span>
                                     <div class="progress">
                                         <div class="progress-bar" style="width: 70%"></div>
                                     </div> <span class="progress-description">
@@ -95,8 +108,10 @@ if (3 == $_SESSION['ROLE']) {
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i class="bi bi-calendar3"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Events</span> <span class="info-box-number">41,410</span>
+                            <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-calendar3"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Events</span> <span
+                                        class="info-box-number">41,410</span>
                                     <div class="progress">
                                         <div class="progress-bar" style="width: 70%"></div>
                                     </div> <span class="progress-description">
@@ -106,8 +121,10 @@ if (3 == $_SESSION['ROLE']) {
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-danger bg-gradient"> <span class="info-box-icon"> <i class="bi bi-chat-text-fill"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Comments</span> <span class="info-box-number">41,410</span>
+                            <div class="info-box text-bg-danger bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-chat-text-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Comments</span> <span
+                                        class="info-box-number">41,410</span>
                                     <div class="progress">
                                         <div class="progress-bar" style="width: 70%"></div>
                                     </div> <span class="progress-description">
@@ -116,10 +133,12 @@ if (3 == $_SESSION['ROLE']) {
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
-                    </div> <!--end::Row-->
-                </div> <!--end::Container-->
-           
-            <!--end::App Content-->
+                    </div>
+                    <!--end::Row-->
+                </div>
+                <!--end::Container-->
+
+                <!--end::App Content-->
         </main>
         <!--end::App Main-->
         <!--begin::Footer-->
