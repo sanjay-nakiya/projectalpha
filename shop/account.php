@@ -87,9 +87,9 @@ if (3 == $_SESSION['ROLE']) {
                     <!--begin::Row-->
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-12">
-                            <div class="info-box text-bg-success bg-gradient"> <span class="info-box-icon"> <i
+                            <div class="info-box text-bg-success bg-gradient "><span class="info-box-icon"> <i
                                         class="bi  bi-patch-plus"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">આવક</span> 
+                                <div class="info-box-content"> <span class="info-box-text">આવક</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -129,7 +129,52 @@ if (3 == $_SESSION['ROLE']) {
                     <!-- =========================================================== -->
                     <h5 class="mt-4 mb-2"></h5>
                     <div class="row">
-                        
+                    <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="card-title">Account Details</h3>
+                                </div> <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">#</th>
+                                                <th>તારીખ</th>
+                                                <th>વિગત</th>
+                                                <th>આવક</th>
+                                                <th>જાવક</th>
+                                                <th>કુલ-રકમ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="align-middle">
+                                                <td>1.</td>
+                                                <td>૧૧-૧૨-૨૦૨૪</td>
+                                                <td>વિગત તારીખ</td>
+                                                <td>452</td>
+                                                <td>452</td>
+                                                <td>452</td>                                               
+                                            </tr>
+                                            <tr class="align-middle">
+                                                <td>1.</td>
+                                                <td>૧૧-૧૨-૨૦૨૪</td>
+                                                <td>વિગત તારીખ</td>
+                                                <td>452</td>
+                                                <td>452</td>
+                                                <td>452</td>                                               
+                                            </tr>
+                                            <tr class="align-middle">
+                                                <td>1.</td>
+                                                <td>૧૧-૧૨-૨૦૨૪</td>
+                                                <td>વિગત તારીખ</td>
+                                                <td>452</td>
+                                                <td>452</td>
+                                                <td>452</td>                                               
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div> <!-- /.card-body -->
+                            </div> <!-- /.card -->
                     </div>
                 </div>
                 <!--end::Container-->
