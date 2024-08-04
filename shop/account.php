@@ -68,68 +68,61 @@ if (3 == $_SESSION['ROLE']) {
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
                                     class="d-block w-100 rounded-circle">
                             </div>
-                            <div class="col-9">
-                        
+                            <div class="col-9 m-5">
+                                <div class="row">
+                                    Name : xyz zxy 
+                                </div>
+                                <div class="row">
+                                    Account No : 012
+                                </div>
+                                <div class="row">
+                                    Mobile No: 0123456789
+                                </div>
                             </div>
-                        </div>
-                       
-                        
-
+                        </div>                
                     </div>
                     <!--end::Row-->
                     <!-- =========================================================== -->
-                    <h5 class="mt-4 mb-2">Info Box With </h5>
+                    <h5 class="mt-4 mb-2"></h5>
                     <!--begin::Row-->
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
-                                        class="bi bi-bookmark-fill"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Bookmarks</span> <span
-                                        class="info-box-number">41,410</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div> <span class="progress-description">
-                                        70% Increase in 30 Days
-                                    </span>
-                                </div> <!-- /.info-box-content -->
-                            </div> <!-- /.info-box -->
-                        </div> <!-- /.col -->
-                        <div class="col-md-3 col-sm-6 col-12">
+                        <div class="col-md-6 col-sm-6 col-12">
                             <div class="info-box text-bg-success bg-gradient"> <span class="info-box-icon"> <i
-                                        class="bi bi-hand-thumbs-up"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Likes</span> <span
-                                        class="info-box-number">41,410</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div> <span class="progress-description">
-                                        70% Increase in 30 Days
-                                    </span>
+                                        class="bi  bi-patch-plus"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">આવક</span> 
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i
-                                        class="bi bi-calendar3"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Events</span> <span
-                                        class="info-box-number">41,410</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div> <span class="progress-description">
-                                        70% Increase in 30 Days
-                                    </span>
-                                </div> <!-- /.info-box-content -->
-                            </div> <!-- /.info-box -->
-                        </div> <!-- /.col -->
-                        <div class="col-md-3 col-sm-6 col-12">
+                        <div class="col-md-6 col-sm-6 col-12">
                             <div class="info-box text-bg-danger bg-gradient"> <span class="info-box-icon"> <i
-                                        class="bi bi-chat-text-fill"></i> </span>
-                                <div class="info-box-content"> <span class="info-box-text">Comments</span> <span
+                                        class="bi bi-patch-minus"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">જાવક</span>
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-currency-rupee"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">કુલ રકમ</span> <span
                                         class="info-box-number">41,410</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 70%"></div>
-                                    </div> <span class="progress-description">
-                                        70% Increase in 30 Days
-                                    </span>
+                                    
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-currency-rupee"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">જમાં રકમ</span> <span
+                                        class="info-box-number">41,410</span>
+                                    
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i
+                                        class="bi bi-currency-rupee"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">બાકી રકમ</span> <span
+                                        class="info-box-number">41,410</span>                                    
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
