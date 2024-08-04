@@ -70,7 +70,7 @@ if (3 == $_SESSION['ROLE']) {
                             </div>
                             <div class="col-9 m-5">
                                 <div class="row">
-                                    Name : xyz zxy 
+                                    Name : xyz zxy
                                 </div>
                                 <div class="row">
                                     Account No : 012
@@ -79,7 +79,7 @@ if (3 == $_SESSION['ROLE']) {
                                     Mobile No: 0123456789
                                 </div>
                             </div>
-                        </div>                
+                        </div>
                     </div>
                     <!--end::Row-->
                     <!-- =========================================================== -->
@@ -87,14 +87,13 @@ if (3 == $_SESSION['ROLE']) {
                     <!--begin::Row-->
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-12">
-                            <div class="info-box text-bg-success bg-gradient "><span class="info-box-icon"> <i
-                                        class="bi  bi-patch-plus"></i> </span>
+                            <div type="button" class="info-box  text-bg-success bg-gradient " data-bs-toggle="modal" data-bs-target="#income"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">આવક</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-6 col-sm-6 col-12">
-                            <div class="info-box text-bg-danger bg-gradient"> <span class="info-box-icon"> <i
+                            <div  type="button" class="info-box text-bg-danger bg-gradient" data-bs-toggle="modal" data-bs-target="#outcome"> <span class="info-box-icon"> <i
                                         class="bi bi-patch-minus"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જાવક</span>
                                 </div> <!-- /.info-box-content -->
@@ -104,7 +103,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">કુલ રકમ</span> <span
-                                        class="info-box-number">41,410</span>                                    
+                                        class="info-box-number">41,410</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -112,7 +111,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જમાં રકમ</span> <span
-                                        class="info-box-number">41,410</span>                                    
+                                        class="info-box-number">41,410</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -120,7 +119,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">બાકી રકમ</span> <span
-                                        class="info-box-number">41,410</span>                                    
+                                        class="info-box-number">41,410</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -129,52 +128,52 @@ if (3 == $_SESSION['ROLE']) {
                     <!-- =========================================================== -->
                     <h5 class="mt-4 mb-2"></h5>
                     <div class="row">
-                    <div class="card mb-4">
-                                <div class="card-header">
-                                    <h3 class="card-title">Account Details</h3>
-                                </div> <!-- /.card-header -->
-                                <div class="card-body p-0">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>તારીખ</th>
-                                                <th>વિગત</th>
-                                                <th>આવક</th>
-                                                <th>જાવક</th>
-                                                <th>કુલ-રકમ</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="align-middle">
-                                                <td>1.</td>
-                                                <td>૧૧-૧૨-૨૦૨૪</td>
-                                                <td>વિગત તારીખ</td>
-                                                <td>452</td>
-                                                <td>452</td>
-                                                <td>452</td>                                               
-                                            </tr>
-                                            <tr class="align-middle">
-                                                <td>1.</td>
-                                                <td>૧૧-૧૨-૨૦૨૪</td>
-                                                <td>વિગત તારીખ</td>
-                                                <td>452</td>
-                                                <td>452</td>
-                                                <td>452</td>                                               
-                                            </tr>
-                                            <tr class="align-middle">
-                                                <td>1.</td>
-                                                <td>૧૧-૧૨-૨૦૨૪</td>
-                                                <td>વિગત તારીખ</td>
-                                                <td>452</td>
-                                                <td>452</td>
-                                                <td>452</td>                                               
-                                            </tr>
-                                           
-                                        </tbody>
-                                    </table>
-                                </div> <!-- /.card-body -->
-                            </div> <!-- /.card -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="card-title">Account Details</h3>
+                            </div> <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>તારીખ</th>
+                                            <th>વિગત</th>
+                                            <th>આવક</th>
+                                            <th>જાવક</th>
+                                            <th>કુલ-રકમ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="align-middle">
+                                            <td>1.</td>
+                                            <td>૧૧-૧૨-૨૦૨૪</td>
+                                            <td>વિગત તારીખ</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>1.</td>
+                                            <td>૧૧-૧૨-૨૦૨૪</td>
+                                            <td>વિગત તારીખ</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>1.</td>
+                                            <td>૧૧-૧૨-૨૦૨૪</td>
+                                            <td>વિગત તારીખ</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                            <td>452</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div> <!-- /.card-body -->
+                        </div> <!-- /.card -->
                     </div>
                 </div>
                 <!--end::Container-->
@@ -189,7 +188,58 @@ if (3 == $_SESSION['ROLE']) {
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
-
+    <div class="modal fade" id="income" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">આવક</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">રકમ</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">વિગત</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">સાચવો</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="outcome" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">જાવક</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">રકમ</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">વિગત:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">સાચવો</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php include 'js.php'; ?>
 </body>
 
