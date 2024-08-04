@@ -120,7 +120,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જમાં રકમ</span> <span
-                                        class="info-box-number">41,410</span>
+                                        class="info-box-number">0000</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -159,7 +159,7 @@ if (3 == $_SESSION['ROLE']) {
                                         
                                         $sql = "SELECT * FROM `account` WHERE customer_id='$cid'";
                                         $res = mysqli_query($conn, $sql);
-                                        $netbalance=0;
+                                             $netbalance=0;
                                             while ($row = mysqli_fetch_assoc($res)) {
                                                 ?>
                                                
