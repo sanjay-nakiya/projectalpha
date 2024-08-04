@@ -86,13 +86,13 @@ if (3 == $_SESSION['ROLE']) {
                     <h5 class="mt-4 mb-2"></h5>
                     <!--begin::Row-->
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-12">
+                        <div class="col-md-6 col-sm-6 col-6">
                             <div type="button" class="info-box  text-bg-success bg-gradient " data-bs-toggle="modal" data-bs-target="#income"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">આવક</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
-                        <div class="col-md-6 col-sm-6 col-12">
+                        <div class="col-md-6 col-sm-6 col-6">
                             <div  type="button" class="info-box text-bg-danger bg-gradient" data-bs-toggle="modal" data-bs-target="#outcome"> <span class="info-box-icon"> <i
                                         class="bi bi-patch-minus"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જાવક</span>
@@ -191,12 +191,13 @@ if (3 == $_SESSION['ROLE']) {
     <div class="modal fade" id="income" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">આવક</h1>
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">આવક</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form>
                 <div class="modal-body">
-                    <form>
+                   
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
                             <input type="text" class="form-control" id="recipient-name">
@@ -205,24 +206,30 @@ if (3 == $_SESSION['ROLE']) {
                             <label for="message-text" class="col-form-label">વિગત</label>
                             <textarea class="form-control" id="message-text"></textarea>
                         </div>
-                    </form>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">તારીખ</label>
+                            <input type="date" name=""  value="<?php echo date('Y-m-d'); ?>" class="form-control" id="recipient-name">
+                        </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">સાચવો</button>
+                    <button type="button" name="income" class="btn btn-success">ઉમેરો</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
     <div class="modal fade" id="outcome" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">જાવક</h1>
+                <div class="modal-header bg-danger">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">જાવક</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form>
                 <div class="modal-body">
-                    <form>
+                    
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
                             <input type="text" class="form-control" id="recipient-name">
@@ -231,12 +238,17 @@ if (3 == $_SESSION['ROLE']) {
                             <label for="message-text" class="col-form-label">વિગત:</label>
                             <textarea class="form-control" id="message-text"></textarea>
                         </div>
-                    </form>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">તારીખ</label>
+                            <input type="date" name=""  value="<?php echo date('Y-m-d'); ?>" class="form-control" id="recipient-name">
+                        </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">સાચવો</button>
+                    <button type="button" name="outcome" class="btn btn-danger">ઉમેરો</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
