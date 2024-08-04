@@ -20,8 +20,7 @@ $sql = "CREATE TABLE account
     ac_date DATE NOT NULL,
     detail INT(6) NOT NULL,
     cradit INT(6) NOT NULL,
-    dabit INT(6) NOT NULL,
-    balance INT(6) NOT NULL
+    dabit INT(6) NOT NULL
     
 )";
 

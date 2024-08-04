@@ -12,9 +12,9 @@ class account
         $this->db = $conn;
 
     }
-    function insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit,$balence)
+    function insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit)
     {
-        $sql = "INSERT INTO `account`(`shop`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`,`balance`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit','$balance')";
+        $sql = "INSERT INTO `account`(`shop`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -58,17 +58,14 @@ $obj = new account();
 
 if (isset($_POST['income'])) {
     $shop= $conn->real_escape_string($_POST['shop']);
-    $fname= $conn->real_escape_string($_POST['fname']);
-    $lname= $conn->real_escape_string($_POST['lname']);
-    $village= $conn->real_escape_string($_POST['village']);
-    $mobile= $conn->real_escape_string($_POST['mobile']);
-    $email= $conn->real_escape_string($_POST['email']);
-    $username= $conn->real_escape_string($_POST['username']);
-    $pass = $conn->real_escape_string(md5($_POST['password']));
-    $createat = $conn->$_POST['createat'];
-    $res = $obj->insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass);
+    $customer_id= $conn->real_escape_string($_POST['customer_id']);
+    $ac_date= $conn->real_escape_string($_POST['ac_date']);
+    $detail= $conn->real_escape_string($_POST['detail']);
+    $cradit= $conn->real_escape_string($_POST['cradit']);
+    $dabit= $conn->real_escape_string($_POST['dabit']);
+    $res = $obj->insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit);
     if ($res) {
-        header("location:account-list.php");
+        header("location:account.php");
     } else {
         echo "alert('data not inserted successfully')";
     }
