@@ -1,10 +1,10 @@
 <?php
-include 'error.php';
-error_reporting(0);
+
 class account
 {
 
     private $conn = '';
+   
     function __construct()
     {
         include 'database/db.php';
@@ -14,7 +14,7 @@ class account
     }
     function insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit)
     {
-        $sql = "INSERT INTO `account`(`shop`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit')";
+        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -39,8 +39,9 @@ class account
     }
     function accountview()
     {
-        $shop=$_SESSION['ID'];        
-        $sql = "SELECT * FROM `account` WHERE shop='$shop'";
+        $shop=$_SESSION['ID'];
+        $cid=$_POST['cid']; 
+        $sql = "SELECT * FROM `account` WHERE customer_id='$cid'";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -55,17 +56,33 @@ class account
 
 }
 $obj = new account();
-
+ 
 if (isset($_POST['income'])) {
     $shop= $conn->real_escape_string($_POST['shop']);
-    $customer_id= $conn->real_escape_string($_POST['customer_id']);
+    $cid= $conn->real_escape_string($_POST['cid']);
     $ac_date= $conn->real_escape_string($_POST['ac_date']);
     $detail= $conn->real_escape_string($_POST['detail']);
     $cradit= $conn->real_escape_string($_POST['cradit']);
-    $dabit= $conn->real_escape_string($_POST['dabit']);
-    $res = $obj->insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit);
+    $dabit=0;
+    $res = $obj->insert($shop,$cid,$ac_date,$detail,$cradit,$dabit);
     if ($res) {
-        header("location:account.php");
+       
+        header("location:customer-list.php");
+    } else {
+        echo "alert('data not inserted successfully')";
+    }
+}
+if (isset($_POST['outcome'])) {
+    $shop= $conn->real_escape_string($_POST['shop']);
+    $cid= $conn->real_escape_string($_POST['cid']);
+    $ac_date= $conn->real_escape_string($_POST['ac_date']);
+    $detail= $conn->real_escape_string($_POST['detail']);
+    $cradit= 0;
+    $dabit=$conn->real_escape_string($_POST['dabit']);
+    $res = $obj->insert($shop,$cid,$ac_date,$detail,$cradit,$dabit);
+    if ($res) {
+       
+        header("location:customer-list.php");
     } else {
         echo "alert('data not inserted successfully')";
     }

@@ -15,13 +15,12 @@ if (!$conn) {
 $sql = "CREATE TABLE account 
 (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    shop INT(6) NOT NULL,
+    shop_id INT(6) NOT NULL,
     customer_id INT(6) NOT NULL,
     ac_date DATE NOT NULL,
-    detail INT(6) NOT NULL,
+    detail VARCHAR(255) NOT NULL,
     cradit INT(6) NOT NULL,
-    dabit INT(6) NOT NULL
-    
+    dabit INT(6) NOT NULL    
 )";
 
 if (mysqli_query($conn, $sql)) {

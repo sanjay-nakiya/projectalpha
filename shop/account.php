@@ -1,6 +1,6 @@
 <?php
 include 'path.php';
-include 'error.php'; 
+//include 'error.php'; 
 session_start();
 // Include database connection file
 include_once('controller/database/db.php');
@@ -9,9 +9,12 @@ if (!isset($_SESSION['ID'])) {
   exit();
 }
 if (3 == $_SESSION['ROLE']) {
-    include 'controller/customer_controller.php';
+    include 'controller/account_controller.php';
     $shop=$_SESSION['ID'];
-    $customer_id=$_POST['customer_id'];
+    $cid=$_POST['cid']; 
+  
+   
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +63,7 @@ if (3 == $_SESSION['ROLE']) {
             <!--end::App Content Header-->
             <!--begin::App Content-->
             <div class="app-content">
+
                 <div class="container-fluid">
 
                     <h5 class="mb-2">ખાતુ</h5>
@@ -89,13 +93,16 @@ if (3 == $_SESSION['ROLE']) {
                     <!--begin::Row-->
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-6">
-                            <div type="button" class="info-box  text-bg-success bg-gradient " data-bs-toggle="modal" data-bs-target="#income"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i> </span>
+                            <div type="button" class="info-box  text-bg-success bg-gradient " data-bs-toggle="modal"
+                                data-bs-target="#incomee"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i>
+                                </span>
                                 <div class="info-box-content"> <span class="info-box-text">આવક</span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-6 col-sm-6 col-6">
-                            <div  type="button" class="info-box text-bg-danger bg-gradient" data-bs-toggle="modal" data-bs-target="#outcome"> <span class="info-box-icon"> <i
+                            <div type="button" class="info-box text-bg-danger bg-gradient" data-bs-toggle="modal"
+                                data-bs-target="#outcomee"> <span class="info-box-icon"> <i
                                         class="bi bi-patch-minus"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જાવક</span>
                                 </div> <!-- /.info-box-content -->
@@ -146,32 +153,32 @@ if (3 == $_SESSION['ROLE']) {
                                             <th>કુલ-રકમ</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
+                                        <?php
+                                        
+                                        $sql = "SELECT * FROM `account` WHERE customer_id='$cid'";
+                                        $res = mysqli_query($conn, $sql);
+                                        $netbalance=0;
+                                            while ($row = mysqli_fetch_assoc($res)) {
+                                                ?>
+                                               
                                         <tr class="align-middle">
-                                            <td>1.</td>
-                                            <td>૧૧-૧૨-૨૦૨૪</td>
-                                            <td>વિગત તારીખ</td>
-                                            <td>452</td>
-                                            <td>452</td>
-                                            <td>452</td>
-                                        </tr>
-                                        <tr class="align-middle">
-                                            <td>1.</td>
-                                            <td>૧૧-૧૨-૨૦૨૪</td>
-                                            <td>વિગત તારીખ</td>
-                                            <td>452</td>
-                                            <td>452</td>
-                                            <td>452</td>
-                                        </tr>
-                                        <tr class="align-middle">
-                                            <td>1.</td>
-                                            <td>૧૧-૧૨-૨૦૨૪</td>
-                                            <td>વિગત તારીખ</td>
-                                            <td>452</td>
-                                            <td>452</td>
-                                            <td>452</td>
+                                            <td> <?php echo $row["id"]; ?></td>
+                                            <td> <?php echo $row["ac_date"]; ?></td>
+                                            <td><?php echo $row["detail"]; ?></td>
+                                            <td><?php echo $row["cradit"]; ?></td>
+                                            <td><?php echo $row["dabit"]; ?></td>
+                                            <?php 
+                                                $cradit=$row["cradit"];
+                                                $dabit=$row["dabit"];
+                                                $balance=$cradit-$dabit;
+                                                $netbalance=$netbalance+$balance;
+                                            ?>
+                                            <td><?php echo $netbalance; ?></td>
                                         </tr>
 
+                                            <?php } ?>
                                     </tbody>
                                 </table>
                             </div> <!-- /.card-body -->
@@ -190,66 +197,70 @@ if (3 == $_SESSION['ROLE']) {
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <div class="modal fade" id="income" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="incomee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-success">
                     <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">આવક</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
-                <div class="modal-body">
-                   
+                <form action="" method="post">
+                    <div class="modal-body">
+                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="number" name="cradit" class="form-control" id="recipient-name">
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">વિગત</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea type="text" name="detail" class="form-control" id="message-text"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">તારીખ</label>
-                            <input type="date" name=""  value="<?php echo date('Y-m-d'); ?>" class="form-control" id="recipient-name">
+                            <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>" class="form-control"
+                                id="recipient-name">
                         </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" name="income" class="btn btn-success">ઉમેરો</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="income" class="btn btn-success">ઉમેરો</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="outcome" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="outcomee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
-                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">જાવક</h1>
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">આવક</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
-                <div class="modal-body">
-                    
+                <form action="" method="post">
+                    <div class="modal-body">
+                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="number" name="dabit" class="form-control" id="recipient-name">
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">વિગત:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="message-text" class="col-form-label">વિગત</label>
+                            <textarea type="text" name="detail" class="form-control" id="message-text"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">તારીખ</label>
-                            <input type="date" name=""  value="<?php echo date('Y-m-d'); ?>" class="form-control" id="recipient-name">
+                            <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>" class="form-control"
+                                id="recipient-name">
                         </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" name="outcome" class="btn btn-danger">ઉમેરો</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="outcome" class="btn btn-danger">ઉમેરો</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -259,7 +270,8 @@ if (3 == $_SESSION['ROLE']) {
 
 </html>
 
-<?php } else {
+<?php }
+ else {
   include 'logout.php';
 }
 

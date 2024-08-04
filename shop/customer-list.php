@@ -85,8 +85,10 @@ if (3 == $_SESSION['ROLE']) {
                                                 <td>
                                                     
                                                 </td>
-                                                <td>   <form action="" method="POST">
-                            <input type="number" value="<?php echo $row["id"]; ?>" name="id" hidden>
+                                                <td>   <form action="account.php" method="POST">
+                            <input type="number" value="<?php echo $row["id"]; ?>" name="cid" hidden>                            
+                            <button class="btn btn-warning" type="submit" name=""><i
+                                    class="bi bi-eye"></i></button>
                             <button class="btn btn-warning" type="submit" name=""
                                 onclick="return confirm('are you sure to edit')"><i
                                     class="bi bi-pencil-square"></i></button>
