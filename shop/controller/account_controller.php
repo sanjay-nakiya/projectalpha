@@ -12,9 +12,9 @@ class account
         $this->db = $conn;
 
     }
-    function insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass)
+    function insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit,$balence)
     {
-        $sql = "INSERT INTO `account`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass')";
+        $sql = "INSERT INTO `account`(`shop`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`,`balance`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit','$balance')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -56,7 +56,7 @@ class account
 }
 $obj = new account();
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['income'])) {
     $shop= $conn->real_escape_string($_POST['shop']);
     $fname= $conn->real_escape_string($_POST['fname']);
     $lname= $conn->real_escape_string($_POST['lname']);
