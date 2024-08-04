@@ -108,11 +108,31 @@ if (3 == $_SESSION['ROLE']) {
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
+                        <?php
+                        $sql = "SELECT * FROM `account` WHERE customer_id='$cid'";
+                        $res = mysqli_query($conn, $sql); 
+                            $cr=0;
+                            $db=0;
+                            $ammount=0;
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            $cr += $row['cradit'];
+                            $db += $row['dabit'];
+
+                        }
+                            $kul=$cr+$db;
+                            $jama=$cr;
+                            
+                            $baki=$db;
+                           
+                           
+                            ?>                         
+                            
+                        
                         <div class="col-md-4 col-sm-6 col-12">
                             <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">કુલ રકમ</span> <span
-                                        class="info-box-number">41,410</span>
+                                        class="info-box-number"><?php echo $kul; ?></span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -120,7 +140,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જમાં રકમ</span> <span
-                                        class="info-box-number">0000</span>
+                                        class="info-box-number"><?php echo $jama; ?></span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -128,7 +148,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-warning bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">બાકી રકમ</span> <span
-                                        class="info-box-number">41,410</span>
+                                        class="info-box-number"><?php echo $baki; ?></span>
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
