@@ -104,8 +104,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">કુલ રકમ</span> <span
-                                        class="info-box-number">41,410</span>
-                                    
+                                        class="info-box-number">41,410</span>                                    
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -113,8 +112,7 @@ if (3 == $_SESSION['ROLE']) {
                             <div class="info-box text-bg-primary bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">જમાં રકમ</span> <span
-                                        class="info-box-number">41,410</span>
-                                    
+                                        class="info-box-number">41,410</span>                                    
                                 </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
@@ -128,6 +126,11 @@ if (3 == $_SESSION['ROLE']) {
                         </div> <!-- /.col -->
                     </div>
                     <!--end::Row-->
+                    <!-- =========================================================== -->
+                    <h5 class="mt-4 mb-2"></h5>
+                    <div class="row">
+                        
+                    </div>
                 </div>
                 <!--end::Container-->
 
