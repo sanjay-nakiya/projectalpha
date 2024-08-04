@@ -10,6 +10,8 @@ if (!isset($_SESSION['ID'])) {
 }
 if (3 == $_SESSION['ROLE']) {
     include 'controller/customer_controller.php';
+    $shop=$_SESSION['ID'];
+    $customer_id=$_POST['customer_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
