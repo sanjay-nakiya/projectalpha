@@ -125,9 +125,9 @@ if (3 == $_SESSION['ROLE']) {
                             $baki=$db;
                            
                            
-                            ?>
-
-
+                            ?>                         
+                            
+                        
                         <div class="col-md-4 col-sm-6 col-12">
                             <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
@@ -182,7 +182,7 @@ if (3 == $_SESSION['ROLE']) {
                                              $netbalance=0;
                                             while ($row = mysqli_fetch_assoc($res)) {
                                                 ?>
-
+                                               
                                         <tr class="align-middle">
                                             <td> <?php echo $row["id"]; ?></td>
                                             <td> <?php echo $row["ac_date"]; ?></td>
@@ -198,7 +198,7 @@ if (3 == $_SESSION['ROLE']) {
                                             <td><?php echo $netbalance; ?></td>
                                         </tr>
 
-                                        <?php } ?>
+                                            <?php } ?>
                                     </tbody>
                                 </table>
                             </div> <!-- /.card-body -->
@@ -218,9 +218,36 @@ if (3 == $_SESSION['ROLE']) {
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <div class="modal fade" id="incomee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-fullscreen">
-            <div class="modal-content ">
-               
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">આવક</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">રકમ</label>
+                            <input type="number" name="cradit" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">વિગત</label>
+                            <textarea type="text" name="detail" class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">તારીખ</label>
+                            <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>" class="form-control"
+                                id="recipient-name">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="income" class="btn btn-success">ઉમેરો</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -233,8 +260,8 @@ if (3 == $_SESSION['ROLE']) {
                 </div>
                 <form action="" method="post">
                     <div class="modal-body">
-                        <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
-                        <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
                             <input type="number" name="dabit" class="form-control" id="recipient-name">
