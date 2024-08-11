@@ -84,8 +84,11 @@ $output .= '
 	</tr>
 	</table>';
 // create pdf of invoice	
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/projectalpha";
+$pn="/projectalpha";
 $invoiceFileName = 'Invoice-'.$invoiceValues['order_id'].'.pdf';
-require_once 'dompdf/src/Autoloader.php';
+require_once "$path/invoice/dompdf/src/Autoloader.php";
 Dompdf\Autoloader::register();
 use Dompdf\Dompdf;
 $dompdf = new Dompdf();
