@@ -24,7 +24,7 @@ if (3 == $_SESSION['ROLE']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ડેશબોર્ડ</title>
     <?php include 'css.php'; ?>
-   
+
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -66,10 +66,9 @@ if (3 == $_SESSION['ROLE']) {
             <div class="app-content">
 
                 <div class="container-fluid">
-                <!-- Invoice 1 - Bootstrap Brain Component -->
-                    
-                   
+                  
                 </div>
+
                 <!--end::Container-->
 
                 <!--end::App Content-->
@@ -82,9 +81,9 @@ if (3 == $_SESSION['ROLE']) {
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    
+
     <?php include 'js.php'; ?>
-    <script src="assets/js/invoice.js"></script>
+   
 </body>
 
 </html>
