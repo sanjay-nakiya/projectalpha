@@ -66,73 +66,71 @@ if (3 == $_SESSION['ROLE']) {
             <div class="app-content">
 
                 <div class="container-fluid">
-               <div class="card row">
-                <form action="" method="post">
-                    
-                    
-                    <div class="card-body">
-                        <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
-                        <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">તારીખ</label>
-                            <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>" class="form-control"
-                                id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">વિગત</label>
-                            <textarea type="text" name="detail" class="form-control" id="message-text"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">ટોટલ</label>
-                            <input type="number" id="total" name="total" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">જમાં</label>
-                            <input type="number" id="jama" name="jama" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">બાકી</label>
-                            <input type="number" id="baki" name="baki" class="form-control" id="recipient-name">
-                        </div>
+                    <div class="card row">
+                        <form action="" method="post">
 
 
+                            <div class="card-body">
+                                <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                                <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">તારીખ</label>
+                                    <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>"
+                                        class="form-control" id="recipient-name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">વિગત</label>
+                                    <textarea type="text" name="detail" class="form-control"
+                                        id="message-text"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">ટોટલ</label>
+                                    <input type="number" id="total" name="total" class="form-control"
+                                        id="recipient-name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">જમાં</label>
+                                    <input type="number" id="jama" name="jama" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">બાકી</label>
+                                    <input type="number" id="baki" name="baki" class="form-control" id="recipient-name">
+                                </div>
+
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="card">Close</button>
+                                <button type="submit" name="income" class="btn btn-success">ઉમેરો</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="card">Close</button>
-                        <button type="submit" name="income" class="btn btn-success">ઉમેરો</button>
-                    </div>
-                </form>
-               </div>
-        </div>
-    </div>
                 </div>
+            </div>
+    </div>
 
-                <!--end::Container-->
+    <!--end::Container-->
 
-                <!--end::App Content-->
-        </main>
-        <!--end::App Main-->
-        <!--begin::Footer-->
-        <?php include "footer.php"; ?>
-        <!--end::Footer-->
+    <!--end::App Content-->
+    </main>
+    <!--end::App Main-->
+    <!--begin::Footer-->
+    <?php include "footer.php"; ?>
+    <!--end::Footer-->
     </div>
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
 
     <?php include 'js.php'; ?>
-   <script>
-                    $('input').keyup(function() { // run anytime the value changes
+    <script>
+    $('input').keyup(function() { 
+        let total = $('#total').val();
+        let jama = $('#jama').val(); 
+        $('#baki').val(total - jama);
+    });
+    </script>
 
-
-                        var firstValue = parseFloat($('#total').val()); // get value of field
-                        var secondValue = parseFloat($('#jama').val()); // convert it to a float
-                        var thirdValue = parseFloat($('#third').val());
-                        var fourthValue = parseFloat($('#fourth').val());
-
-                        $('#baki').html(total - jama); // add them and output it
-                    });
-                    </script>
 </body>
 
 </html>

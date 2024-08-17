@@ -90,8 +90,17 @@ if (3 == $_SESSION['ROLE']) {
                     <!--end::Row-->
                     <!-- =========================================================== -->
                     <h5 class="mt-4 mb-2"></h5>
+
                     <!--begin::Row-->
                     <div class="row">
+                        <div class="col-md-12 col-sm-12 col-12">
+                            <div type="button" class="info-box  text-bg-info bg-gradient " data-bs-toggle="modal"
+                                data-bs-target="#add"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i>
+                                </span>
+                                <div class="info-box-content"> <span class="info-box-text">ઉમેરો</span>
+                                </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div>
                         <div class="col-md-6 col-sm-6 col-6">
                             <div type="button" class="info-box  text-bg-success bg-gradient " data-bs-toggle="modal"
                                 data-bs-target="#incomee"><span class="info-box-icon"> <i class="bi  bi-patch-plus"></i>
@@ -125,9 +134,9 @@ if (3 == $_SESSION['ROLE']) {
                             $baki=$db;
                            
                            
-                            ?>                         
-                            
-                        
+                            ?>
+
+
                         <div class="col-md-4 col-sm-6 col-12">
                             <div class="info-box text-bg-info bg-gradient"> <span class="info-box-icon"> <i
                                         class="bi bi-currency-rupee"></i> </span>
@@ -168,8 +177,11 @@ if (3 == $_SESSION['ROLE']) {
                                             <th style="width: 10px">#</th>
                                             <th>તારીખ</th>
                                             <th>વિગત</th>
-                                            <th>આવક</th>
-                                            <th>જાવક</th>
+                                            <th>ML/ગ્રામ</th>
+                                            <th>નંગ</th>
+                                            <th>ભાવ</th>
+                                            <th>જમાં</th>
+                                            <th>બાકી</th>
                                             <th>કુલ-રકમ</th>
                                         </tr>
                                     </thead>
@@ -182,23 +194,21 @@ if (3 == $_SESSION['ROLE']) {
                                              $netbalance=0;
                                             while ($row = mysqli_fetch_assoc($res)) {
                                                 ?>
-                                               
+
                                         <tr class="align-middle">
                                             <td> <?php echo $row["id"]; ?></td>
                                             <td> <?php echo $row["ac_date"]; ?></td>
                                             <td><?php echo $row["detail"]; ?></td>
-                                            <td><?php echo $row["cradit"]; ?></td>
-                                            <td><?php echo $row["dabit"]; ?></td>
-                                            <?php 
-                                                $cradit=$row["cradit"];
-                                                $dabit=$row["dabit"];
-                                                $balance=$cradit-$dabit;
-                                                $netbalance=$netbalance+$balance;
-                                            ?>
-                                            <td><?php echo $netbalance; ?></td>
+                                            <td><?php echo $row["quantity"]; ?></td>
+                                            <td><?php echo $row["nang"]; ?></td>
+                                            <td><?php echo $row["bhav"]; ?></td>
+                                            <td class="text-success"><?php echo $row["jama"]; ?></td>
+                                            <td class="text-danger"><?php echo $row["baki"]; ?></td>
+
+                                            <td class=""><?php echo  $row["total"]; ?></td>
                                         </tr>
 
-                                            <?php } ?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div> <!-- /.card-body -->
@@ -217,6 +227,64 @@ if (3 == $_SESSION['ROLE']) {
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">આવક</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post">
+
+
+                    <div class="modal-body">
+                        <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                        <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">તારીખ</label>
+                            <input type="date" name="ac_date" value="<?php echo date('Y-m-d'); ?>" class="form-control"
+                                id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">વિગત</label>
+                            <textarea type="text" name="detail" class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ML/ગ્રામ</label>
+                            <input type="number" id="quantity" name="quantity" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">નંગ</label>
+                            <input type="number" id="nang" name="nang" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ભાવ</label>
+                            <input type="number" id="bhav" name="bhav" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ટોટલ</label>
+                            <input type="number" id="total" name="total" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">જમાં</label>
+                            <input type="number" id="jama" name="jama" class="form-control text-success">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">બાકી</label>
+                            <input type="number" id="baki" name="baki" class="form-control text-danger">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="card">Close</button>
+                        <button type="submit" name="add" class="btn btn-success">ઉમેરો</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="incomee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -226,8 +294,8 @@ if (3 == $_SESSION['ROLE']) {
                 </div>
                 <form action="" method="post">
                     <div class="modal-body">
-                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
-                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                        <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                        <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
                             <input type="number" name="cradit" class="form-control" id="recipient-name">
@@ -260,8 +328,8 @@ if (3 == $_SESSION['ROLE']) {
                 </div>
                 <form action="" method="post">
                     <div class="modal-body">
-                    <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
-                    <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
+                        <input type="hidden" name="shop" value="<?php echo $shop; ?>" required>
+                        <input type="hidden" name="cid" value="<?php echo $cid; ?>" required>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">રકમ</label>
                             <input type="number" name="dabit" class="form-control" id="recipient-name">
@@ -286,6 +354,16 @@ if (3 == $_SESSION['ROLE']) {
         </div>
     </div>
     <?php include 'js.php'; ?>
+    <script>
+    $('input').keyup(function() {
+        let nang = $('#nang').val();
+        let bhav = $('#bhav').val();
+        $('#total').val(nang * bhav);
+        let total = $('#total').val();
+        let jama = $('#jama').val();
+        $('#baki').val(total - jama);
+    });
+    </script>
 </body>
 
 </html>

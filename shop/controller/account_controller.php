@@ -12,9 +12,9 @@ class account
         $this->db = $conn;
 
     }
-    function insert($shop,$customer_id,$ac_date,$detail,$cradit,$dabit)
+    function insert($shop,$customer_id,$ac_date,$detail,$quantity,$nang,$bhav,$jama,$baki,$total)
     {
-        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`, `cradit`, `dabit`) VALUES ('$shop','$customer_id','$ac_date','$detail','$cradit','$dabit')";
+        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`,`quantity`,`nang`,`bhav`, `jama`, `baki`, `total`) VALUES ('$shop','$customer_id','$ac_date','$detail','$quantity','$nang','$bhav','$jama','$baki','$total')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -57,14 +57,18 @@ class account
 }
 $obj = new account();
  
-if (isset($_POST['income'])) {
+if (isset($_POST['add'])) {
     $shop= $conn->real_escape_string($_POST['shop']);
     $cid= $conn->real_escape_string($_POST['cid']);
     $ac_date= $conn->real_escape_string($_POST['ac_date']);
     $detail= $conn->real_escape_string($_POST['detail']);
-    $cradit= $conn->real_escape_string($_POST['cradit']);
-    $dabit=0;
-    $res = $obj->insert($shop,$cid,$ac_date,$detail,$cradit,$dabit);
+    $quantity= $conn->real_escape_string($_POST['quantity']);
+    $nang= $conn->real_escape_string($_POST['nang']);
+    $bhav= $conn->real_escape_string($_POST['bhav']);
+    $jama= $conn->real_escape_string($_POST['jama']);
+    $baki= $conn->real_escape_string($_POST['baki']);
+    $total= $conn->real_escape_string($_POST['total']);
+    $res = $obj->insert($shop,$cid,$ac_date,$detail,$quantity,$nang,$bhav,$jama,$baki,$total);
     if ($res) {
        
         header("location:customer-list.php");
@@ -77,9 +81,9 @@ if (isset($_POST['outcome'])) {
     $cid= $conn->real_escape_string($_POST['cid']);
     $ac_date= $conn->real_escape_string($_POST['ac_date']);
     $detail= $conn->real_escape_string($_POST['detail']);
-    $cradit= 0;
+    $jama= 0;
     $dabit=$conn->real_escape_string($_POST['dabit']);
-    $res = $obj->insert($shop,$cid,$ac_date,$detail,$cradit,$dabit);
+    $res = $obj->insert($shop,$cid,$ac_date,$detail,$jama,$dabit);
     if ($res) {
        
         header("location:customer-list.php");

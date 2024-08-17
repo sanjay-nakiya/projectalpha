@@ -19,8 +19,12 @@ $sql = "CREATE TABLE account
     customer_id INT(6) NOT NULL,
     ac_date DATE NOT NULL,
     detail VARCHAR(255) NOT NULL,
-    cradit INT(6) NOT NULL,
-    dabit INT(6) NOT NULL    
+    quantity INT(10) NOT NULL,
+    nang INT(10) NOT NULL,
+    bhav INT(10) NOT NULL,
+    jama INT(10) NOT NULL,
+    baki INT(10) NOT NULL,
+    total INT(10) NOT NULL     
 )";
 
 if (mysqli_query($conn, $sql)) {
