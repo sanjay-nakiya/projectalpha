@@ -12,9 +12,15 @@ class account
         $this->db = $conn;
 
     }
-    function insert($shop,$customer_id,$ac_date,$detail,$quantity,$nang,$bhav,$jama,$baki,$total)
+    function insert($shop,$customer_id,$ac_date,$detail,$quantity,$nang,$bhav,$rokada,$baki,$total,$jama,$note)
     {
-        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`,`quantity`,`nang`,`bhav`, `jama`, `baki`, `total`) VALUES ('$shop','$customer_id','$ac_date','$detail','$quantity','$nang','$bhav','$jama','$baki','$total')";
+        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`,`quantity`,`nang`,`bhav`, `rokada`, `baki`, `total`, `jama`, `note`) VALUES ('$shop','$customer_id','$ac_date','$detail','$quantity','$nang','$bhav','$rokada','$baki','$total','$jama','$note')";
+        $res = mysqli_query($this->db, $sql);
+        return $res;
+    }
+    function jama($shop,$customer_id,$ac_date,$detail,$quantity,$nang,$bhav,$rokada,$baki,$total,$jama,$note)
+    {
+        $sql = "INSERT INTO `account`(`shop_id`,`customer_id`, `ac_date`, `detail`,`quantity`,`nang`,`bhav`, `rokada`, `baki`, `total`, `jama`, `note`) VALUES ('$shop','$customer_id','$ac_date','$detail','$quantity','$nang','$bhav','$rokada','$baki','$total','$jama','$note')";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -65,10 +71,33 @@ if (isset($_POST['add'])) {
     $quantity= $conn->real_escape_string($_POST['quantity']);
     $nang= $conn->real_escape_string($_POST['nang']);
     $bhav= $conn->real_escape_string($_POST['bhav']);
-    $jama= $conn->real_escape_string($_POST['jama']);
+    $rokada= $conn->real_escape_string($_POST['rokada']);
     $baki= $conn->real_escape_string($_POST['baki']);
     $total= $conn->real_escape_string($_POST['total']);
-    $res = $obj->insert($shop,$cid,$ac_date,$detail,$quantity,$nang,$bhav,$jama,$baki,$total);
+    $jama= $conn->real_escape_string($_POST['jama']);
+    $note= $conn->real_escape_string($_POST['note']);
+    $res = $obj->insert($shop,$cid,$ac_date,$detail,$quantity,$nang,$bhav,$rokada,$baki,$total,$jama,$note);
+    if ($res) {
+       
+        header("location:customer-list.php");
+    } else {
+        echo "alert('data not inserted successfully')";
+    }
+}
+if (isset($_POST['jamaa'])) {
+    $shop= $conn->real_escape_string($_POST['shop']);
+    $cid= $conn->real_escape_string($_POST['cid']);
+    $ac_date= $conn->real_escape_string($_POST['ac_date']);
+    $detail= $conn->real_escape_string($_POST['detail']);
+    $quantity=0;
+    $nang=0;
+    $bhav=0;
+    $rokada=0;
+    $baki=0;
+    $total=0;
+    $jama= $conn->real_escape_string($_POST['jama']);
+    $note= $conn->real_escape_string($_POST['note']);
+    $res = $obj->jama($shop,$cid,$ac_date,$detail,$quantity,$nang,$bhav,$rokada,$baki,$total,$jama,$note);
     if ($res) {
        
         header("location:customer-list.php");

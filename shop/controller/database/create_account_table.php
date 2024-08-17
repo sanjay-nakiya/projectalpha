@@ -22,9 +22,11 @@ $sql = "CREATE TABLE account
     quantity INT(10) NOT NULL,
     nang INT(10) NOT NULL,
     bhav INT(10) NOT NULL,
-    jama INT(10) NOT NULL,
+    rokada INT(10) NOT NULL,
     baki INT(10) NOT NULL,
-    total INT(10) NOT NULL     
+    total INT(10) NOT NULL,
+    jama INT(10) NOT NULL DEFAULT '0',
+    note VARCHAR(255) NOT NULL  
 )";
 
 if (mysqli_query($conn, $sql)) {
