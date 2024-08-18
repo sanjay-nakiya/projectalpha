@@ -66,6 +66,7 @@ if (3 == $_SESSION['ROLE']) {
                                                 <th style="width: 10px">#</th>
                                                 <th style="width: 80px">ગ્રાહક નંબર</th>
                                                 <th>ગ્રાહકનુ નામ</th>
+                                                <th>મોબાઈલ નંબર</th>
                                                 <th>રકમ</th>
                                                 <th>Action</th>
                                             </tr>
@@ -83,8 +84,9 @@ if (3 == $_SESSION['ROLE']) {
                                                 <?php echo $row["fname"]; ?> <?php echo $row["lname"]; ?>
                                                 </td>
                                                 <td>
-                                                    
+                                                <?php echo $row["mobile"]; ?>
                                                 </td>
+                                                <td></td>
                                                 <td>   <form action="account.php" method="POST">
                             <input type="number" value="<?php echo $row["id"]; ?>" name="cid" hidden>                            
                             <button class="btn btn-warning" type="submit" name=""><i

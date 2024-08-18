@@ -66,7 +66,7 @@ if (3 == $_SESSION['ROLE']) {
 
                 <div class="container">
 
-                    <h5 class="mb-2">ખાતુ</h5>
+                    
                     <!--begin::Row-->
                     <div class="row">
                         <div class="info-box">
