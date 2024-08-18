@@ -13,8 +13,15 @@
 <!--end::Required Plugin(Bootstrap 5)-->
 <!--begin::Required Plugin(AdminLTE)-->
 
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.bootstrap5.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/d3js/7.9.0/d3.min.js"></script>
 <script>
+new DataTable('#example');
+</script>
+<script>
+    
 const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
 const Default = {
     scrollbarTheme: "os-theme-light",
@@ -334,7 +341,5 @@ function calculateTotal() {
         }
     }
 }
-
-
 </script>
 <!--end::Script-->

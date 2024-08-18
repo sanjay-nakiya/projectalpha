@@ -64,7 +64,7 @@ if (3 == $_SESSION['ROLE']) {
             <!--begin::App Content-->
             <div class="app-content">
 
-                <div class="container-fluid">
+                <div class="container">
 
                     <h5 class="mb-2">ખાતુ</h5>
                     <!--begin::Row-->
@@ -163,17 +163,20 @@ if (3 == $_SESSION['ROLE']) {
                     </div>
                     <!--end::Row-->
                     <!-- =========================================================== -->
-                    <h5 class="mt-4 mb-2"></h5>
-                    <div class="row">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3 class="card-title">Account Details</h3>
-                            </div> <!-- /.card-header -->
-                            <div class="card-body p-0">
-                                <table class="table table-striped">
+                   
+                   
+                </div>
+                <div class="container">
+                <div class="row card text-center">
+                        <div class="card-hader h3 p-0 m-2">
+                            ખાતાની વિગતો 
+                        </div>
+                        
+                            <div class="card-body  table-responsive p-0 m-2">
+                                <table  id="example" class="table table-striped table-bordered border-primary ">
                                     <thead>
                                         <tr>
-                                            <th style="width: 10px">#</th>
+                                            <th style="width: 5px">#</th>
                                             <th>તારીખ</th>
                                             <th>વિગત</th>
                                             <th>ML/ગ્રામ</th>
@@ -216,8 +219,8 @@ if (3 == $_SESSION['ROLE']) {
                                         <?php } ?>
                                     </tbody>
                                 </table>
-                            </div> <!-- /.card-body -->
-                        </div> <!-- /.card -->
+                            </div>  
+                        
                     </div>
                 </div>
                 <!--end::Container-->
