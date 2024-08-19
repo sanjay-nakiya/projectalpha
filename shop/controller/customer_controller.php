@@ -13,10 +13,25 @@ class customer
 
     }
     function insert($shop,$fname,$lname,$village,$mobile,$email,$username,$pass)
-    {
-        $sql = "INSERT INTO `customer`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass')";
-        $res = mysqli_query($this->db, $sql);
-        return $res;
+    {   
+            $sql = "SELECT * FROM customer WHERE email='$email' OR username='$username'";
+            $res = mysqli_query($this->db, $sql);
+
+            if ($res->num_rows > 0) {
+                echo "Username or email already exists. Please try with a different one.";
+                header("Location:add-customer.php");
+            } else {
+                // Insert new user
+                $insertsql = "INSERT INTO `customer`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass')";
+                if ($res = mysqli_query($this->db, $insertsql) === TRUE) {
+                    
+                    echo "Registration successful!";
+                    header("Location:customer-list.php");
+                } else {
+                    echo "Error: " . $insertsql . "<br>" . $conn->error;
+                }
+            }
+       
     }
    /* function update($id, $course_id,$semester_id,$subject_id,$category_id,$chapter)
     {
@@ -27,13 +42,6 @@ class customer
     function delete($id)
     {
         $sql = "DELETE FROM `customer` WHERE `id`='$id'";
-        $res = mysqli_query($this->db, $sql);
-        return $res;
-    }
-    function view()
-    {
-            
-        $sql = "SELECT chapter_id,course,semester,subject_name,category,chapter FROM `customer` INNER JOIN courses USING(course_id) INNER JOIN semesters USING(semester_id)  INNER JOIN subjects USING(subject_id) INNER JOIN category USING(category_id)";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }

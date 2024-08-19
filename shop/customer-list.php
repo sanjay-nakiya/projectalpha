@@ -75,7 +75,9 @@ if (3 == $_SESSION['ROLE']) {
                                                 <th style="width: 10px">#</th>
                                                 <th style="width: 80px">ગ્રાહક નંબર</th>
                                                 <th>ગ્રાહકનુ નામ</th>
+                                                <th>યુજરનેમ</th>
                                                 <th>મોબાઈલ નંબર</th>
+                                                <th>ઈ-મેઈલ</th>
                                                 <th>રકમ</th>
                                                 <th>Action</th>
                                             </tr>
@@ -93,7 +95,13 @@ if (3 == $_SESSION['ROLE']) {
                                                     <?php echo $row["fname"]; ?> <?php echo $row["lname"]; ?>
                                                 </td>
                                                 <td>
+                                                    <?php echo $row["username"]; ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $row["mobile"]; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row["email"]; ?>
                                                 </td>
                                                 <td></td>
                                                 <td>

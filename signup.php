@@ -10,16 +10,25 @@ if (isset($_POST['submit'])) {
   $email= $conn->real_escape_string($_POST['email']);
   $username= $conn->real_escape_string($_POST['username']);
   $pass = $conn->real_escape_string(md5($_POST['password']));
+  $sql = "SELECT * FROM customer WHERE email='$email' OR username='$username'";
+  $res = mysqli_query($this->db, $sql);
+
+  if ($res->num_rows > 0) {
+      echo "Username or email already exists. Please try with a different one.";
+      header("Location:add-customer.php");
+  } else {
+      // Insert new user
+      $insertsql = "INSERT INTO `users`(`fname`, `lname`, `email`, `username`, `pass`) VALUES ('$fname','$lname','$email','$username','$pass')";
+      $res = mysqli_query($this->db, $insertsql);
+      if ($res===TRUE) {          
+          echo "Registration successful!";
+          header("Location:index.php");
+      } else {
+        $errorMsg= "Error: " . $insertsql . "<br>" . $conn->error;
+      }
+  }
   //$role     = $conn->real_escape_string($_POST['role']);
-  $sql  = "INSERT INTO `users`(`fname`, `lname`, `email`, `username`, `pass`) VALUES ('$fname','$lname','$email','$username','$pass')";
- 
-  $result=mysqli_query($conn,$sql);
-  if ($result==true) {
-    header("Location:index.php");
-    die();
-  }else{
-    $errorMsg  = "You are not Registred..Please Try again";
-  }   
+  
 }
 ?>
 <!DOCTYPE html>
