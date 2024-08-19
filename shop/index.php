@@ -71,16 +71,16 @@ if (3 == $_SESSION['ROLE']) {
                             </div> <!--end::Small Box Widget 1-->
                         </div> <!--end::Col-->
                         <?php
-                        $sql = "SELECT * FROM `account` ";
+                         $shop=$_SESSION['ID'];
+                        $sql = "SELECT * FROM `account`";
                         $res = mysqli_query($conn, $sql); 
                             $kultotal=0;
                             $kuljama=0;
                             $kulrokada=0;
-                            $jamarakam=0;
-                           
+                            $jamarakam=0;                           
                             $kulbaki=0;
                             
-                        while ($row = mysqli_fetch_assoc($res)) {
+                        while ($row = mysqli_fetch_assoc($res)) { 
                             $kultotal += $row['total'];                           
                             $kulrokada += $row['rokada'];
                             $kuljama += $row['jama'];
