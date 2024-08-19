@@ -44,6 +44,14 @@ class customer
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
+    function ac()
+    {
+        $shop=$_SESSION['ID'];        
+       // $sql = "SELECT * FROM `account` INNER JOIN customer USING(customer_id)  WHERE shop='$shop'";
+       $sql=" SELECT * FROM `account` FULL JOIN customer ON account.customer_id=id WHERE shop='$shop'";
+        $res = mysqli_query($this->db, $sql);
+        return $res;
+    }
     function totalcustomer()
     {
         $shop=$_SESSION['ID'];        

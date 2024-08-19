@@ -61,14 +61,14 @@ if (3 == $_SESSION['ROLE']) {
                 <!--begin::Container-->
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm col-md-6 col-lg-12">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <h3 class="card-title">બધા ગ્રાહક </h3>
                                     <a href="add-customer.php"
                                         class="btn btn-primary position-absolute top-0 end-0 m-2"> નવા ગ્રાહક ઉમેરો</a>
                                 </div> <!-- /.card-header -->
-                                <div class="card-body p-0 m-2">
+                                <div class="card-body p-0 m-2 table-responsive">
                                     <table id="example" class="table table-striped">
                                         <thead>
                                             <tr>
