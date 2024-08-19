@@ -51,6 +51,12 @@ if (3 == $_SESSION['ROLE']) {
                                 </li>
                             </ol>
                         </div>
+                        <?php
+                    // Display error message if it is set
+                    if (!empty($errorMsg)) {
+                        echo "<div class='alert alert-danger' role='alert'>$errorMsg</div>";
+                    }
+                    ?>
                     </div>
                     <!--end::Row-->
                 </div>
