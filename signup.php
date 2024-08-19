@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
   $email= $conn->real_escape_string($_POST['email']);
   $username= $conn->real_escape_string($_POST['username']);
   $pass = $conn->real_escape_string(md5($_POST['password']));
-  $sql = "SELECT * FROM customer WHERE email='$email' OR username='$username'";
+  $sql = "SELECT * FROM users WHERE email='$email' OR username='$username'";
   $res = mysqli_query($this->db, $sql);
 
   if ($res->num_rows > 0) {
