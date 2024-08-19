@@ -25,11 +25,12 @@ class customer
                 $insertsql = "INSERT INTO `customer`(`shop`,`fname`, `lname`, `village`, `mobile`, `email`, `username`, `pass`) VALUES ('$shop','$fname','$lname','$village','$mobile','$email','$username','$pass')";
                 if ($res = mysqli_query($this->db, $insertsql) === TRUE) {
                     
-                    $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
+                   
+                    $errorMsg = "Thank You! I will be in touch.";
                
                     header("Location:customer-list.php");
                 } else {
-                    $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+                    $errorMsg = "Sorry there was an error sending your message. Please try again later";
                  }
             }
             

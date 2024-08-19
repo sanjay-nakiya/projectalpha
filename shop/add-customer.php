@@ -68,7 +68,7 @@ if (3 == $_SESSION['ROLE']) {
                 <!--begin::Container-->
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm col-md-6 col-lg-12">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
                             <!--begin::Form Validation-->
                             <div class="card card-info card-outline mb-4">
                                 <!--begin::Header-->
