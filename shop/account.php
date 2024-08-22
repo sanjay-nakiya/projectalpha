@@ -65,28 +65,42 @@ if (3 == $_SESSION['ROLE']) {
             <div class="app-content">
 
                 <div class="container">
+                <div class="card card-primary card-outline mb-4"> <!--begin::Header-->
+                                <div class="card-header">
+                                    <div class="card-title">ખાતાની માહિતી</div>
+                                </div> <!--end::Header--> <!--begin::Form-->
+                                <form> <!--begin::Body-->
+                                    <div class="card-body">
+                                    <?php
+                                        $sql = "SELECT * FROM `customer` WHERE id='$cid'";
+                                        $res = mysqli_query($conn, $sql);
+                                        
+                                            while ($row = mysqli_fetch_assoc($res)) {
+                                                ?>
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">ખાતા નંબર:</label>
+                                            <div class="col-sm-9 col-10"> <input type="text" class="form-control" value="<?php echo $row["id"]; ?>" readonly></div>
+                                        </div>
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">નામ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["fname"]; ?> <?php echo $row["lname"]; ?>" readonly></div>
+                                        </div>
+                                        <div class="row mb-3"> <label class="col-sm-3  col-2 col-form-label">ગામ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["village"]; ?>" readonly></div>
+                                        </div>
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">મોબાઈલ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["mobile"]; ?>" readonly></div>
+                                        </div>
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">ઈ-મેઈલ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["email"]; ?>" readonly></div>
+                                        </div>
+                                       
+                                        <?php } ?>
+                                        
+                                    </div> <!--end::Body--> <!--begin::Footer-->
+                                 </form> <!--end::Form-->
+                            </div>
 
-                    
                     <!--begin::Row-->
-                    <div class="row">
-                        <div class="info-box">
-                            <div class="col-3">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
-                                    class="d-block w-100 rounded-circle">
-                            </div>
-                            <div class="col-9 m-5">
-                                <div class="row">
-                                    Name : xyz zxy
-                                </div>
-                                <div class="row">
-                                    Account No : 012
-                                </div>
-                                <div class="row">
-                                    Mobile No: 0123456789
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!--end::Row-->
                     <!-- =========================================================== -->
                     <h5 class="mt-4 mb-2"></h5>
@@ -141,7 +155,7 @@ if (3 == $_SESSION['ROLE']) {
                                         class="bi bi-currency-rupee"></i> </span>
                                 <div class="info-box-content"> <span class="info-box-text">કુલ રકમ</span> <span
                                         class="info-box-number h2"><?php echo $kultotal; ?></span>
-                                </div> <!-- /.info-box-content -->  
+                                </div> <!-- /.info-box-content -->
                             </div> <!-- /.info-box -->
                         </div> <!-- /.col -->
                         <div class="col-md-4 col-sm-6 col-12">
@@ -163,36 +177,36 @@ if (3 == $_SESSION['ROLE']) {
                     </div>
                     <!--end::Row-->
                     <!-- =========================================================== -->
-                   
-                   
+
+
                 </div>
                 <div class="container">
-                <div class="row card text-center">
+                    <div class="row card text-center">
                         <div class="card-hader h3 p-0 m-2">
-                            ખાતાની વિગતો 
+                            ખાતાની વિગતો
                         </div>
-                        
-                            <div class="card-body  table-responsive p-0 m-2">
-                                <table  id="example" class="table table-striped table-bordered border-primary ">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 5px">#</th>
-                                            <th>તારીખ</th>
-                                            <th>વિગત</th>
-                                            <th>ML/ગ્રામ</th>
-                                            <th>નંગ</th>
-                                            <th>ભાવ</th>
-                                            <th>કુલ-રકમ</th>
-                                            <th>રોકડા</th>
-                                            <th>બાકી</th>
-                                            <th>જમા</th>
-                                            <th>નોંધ</th>
 
-                                        </tr>
-                                    </thead>
+                        <div class="card-body  table-responsive p-0 m-2">
+                            <table id="example" class="table table-striped table-bordered border-primary ">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5px">#</th>
+                                        <th>તારીખ</th>
+                                        <th>વિગત</th>
+                                        <th>ML/ગ્રામ</th>
+                                        <th>નંગ</th>
+                                        <th>ભાવ</th>
+                                        <th>કુલ-રકમ</th>
+                                        <th>રોકડા</th>
+                                        <th>બાકી</th>
+                                        <th>જમા</th>
+                                        <th>નોંધ</th>
 
-                                    <tbody>
-                                        <?php
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php
                                         
                                         $sql = "SELECT * FROM `account` WHERE customer_id='$cid'";
                                         $res = mysqli_query($conn, $sql);
@@ -200,27 +214,27 @@ if (3 == $_SESSION['ROLE']) {
                                             while ($row = mysqli_fetch_assoc($res)) {
                                                 ?>
 
-                                        <tr class="align-middle">
-                                            <td> <?php echo $row["id"]; ?></td>
-                                            <td> <?php echo $row["ac_date"]; ?></td>
-                                            <td><?php echo $row["detail"]; ?></td>
-                                            <td><?php echo $row["quantity"]; ?></td>
-                                            <td><?php echo $row["nang"]; ?></td>
-                                            <td><?php echo $row["bhav"]; ?></td>
-                                            <td class=""><?php echo  $row["total"]; ?></td>
-                                            <td class="text-success"><?php echo $row["rokada"]; ?></td>
-                                            <td class="text-danger"><?php echo $row["baki"]; ?></td>
-                                            <td class="text-success"><?php echo  $row["jama"]; ?></td>
-                                            <td class=""><?php echo  $row["note"]; ?></td>
+                                    <tr class="align-middle">
+                                        <td> <?php echo $row["id"]; ?></td>
+                                        <td> <?php echo $row["ac_date"]; ?></td>
+                                        <td><?php echo $row["detail"]; ?></td>
+                                        <td><?php echo $row["quantity"]; ?></td>
+                                        <td><?php echo $row["nang"]; ?></td>
+                                        <td><?php echo $row["bhav"]; ?></td>
+                                        <td class=""><?php echo  $row["total"]; ?></td>
+                                        <td class="text-success"><?php echo $row["rokada"]; ?></td>
+                                        <td class="text-danger"><?php echo $row["baki"]; ?></td>
+                                        <td class="text-success"><?php echo  $row["jama"]; ?></td>
+                                        <td class=""><?php echo  $row["note"]; ?></td>
 
 
-                                        </tr>
+                                    </tr>
 
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>  
-                        
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
                 <!--end::Container-->
@@ -258,34 +272,34 @@ if (3 == $_SESSION['ROLE']) {
                             <textarea type="text" name="detail" class="form-control"></textarea>
                         </div>
                         <div class="row">
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">ML/ગ્રામ</label>
-                            <input type="number" id="quantity" name="quantity" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">નંગ</label>
-                            <input type="number" id="nang" name="nang" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">ભાવ</label>
-                            <input type="number" id="bhav" name="bhav" class="form-control">
-                        </div>
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">ML/ગ્રામ</label>
+                                <input type="number" id="quantity" name="quantity" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">નંગ</label>
+                                <input type="number" id="nang" name="nang" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">ભાવ</label>
+                                <input type="number" id="bhav" name="bhav" class="form-control">
+                            </div>
                         </div>
                         <div class="row">
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">ટોટલ</label>
-                            <input type="number" id="total" name="total" class="form-control">
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">ટોટલ</label>
+                                <input type="number" id="total" name="total" class="form-control">
+                            </div>
+
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">રોકડા</label>
+                                <input type="number" id="rokada" name="rokada" class="form-control text-success">
+                            </div>
+                            <div class="col">
+                                <label for="recipient-name" class="col-form-label">બાકી</label>
+                                <input type="number" id="baki" name="baki" class="form-control text-danger">
+                            </div>
                         </div>
-                       
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">રોકડા</label>
-                            <input type="number" id="rokada" name="rokada" class="form-control text-success">
-                        </div>
-                        <div class="col">
-                            <label for="recipient-name" class="col-form-label">બાકી</label>
-                            <input type="number" id="baki" name="baki" class="form-control text-danger">
-                        </div>
-                                            </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">નોંધ</label>
                             <textarea type="text" name="note" class="form-control"></textarea>
