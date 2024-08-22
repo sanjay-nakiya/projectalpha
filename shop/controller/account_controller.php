@@ -32,7 +32,7 @@ class account
     }*/
     function customer_delete($id)
     {
-        $sql =prepare('DELETE * FROM customer, account WHERE id='$id',id='$id'');
+        $sql ="DELETE FROM `customer` WHERE `id`='$id'";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -43,8 +43,7 @@ class account
         return $res;
     }
     function view()
-    {
-            
+    {           
         $sql = "SELECT chapter_id,course,semester,subject_name,category,chapter FROM `account` INNER JOIN courses USING(course_id) INNER JOIN semesters USING(semester_id)  INNER JOIN subjects USING(subject_id) INNER JOIN category USING(category_id)";
         $res = mysqli_query($this->db, $sql);
         return $res;

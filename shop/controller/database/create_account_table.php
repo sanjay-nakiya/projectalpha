@@ -16,7 +16,7 @@ $sql = "CREATE TABLE account
 (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     shop_id INT(6) NOT NULL,
-    customer_id INT(6) NOT NULL,
+    customer_id INT(6) REFERENCES customer(id),
     ac_date DATE NOT NULL,
     detail VARCHAR(255) NOT NULL,
     quantity INT(10) NOT NULL,
@@ -26,7 +26,8 @@ $sql = "CREATE TABLE account
     baki INT(10) NOT NULL,
     total INT(10) NOT NULL,
     jama INT(10) NOT NULL DEFAULT '0',
-    note VARCHAR(255) NOT NULL  
+    note VARCHAR(255) NOT NULL
+  
 )";
 
 if (mysqli_query($conn, $sql)) {
