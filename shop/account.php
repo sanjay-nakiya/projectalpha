@@ -201,6 +201,7 @@ if (3 == $_SESSION['ROLE']) {
                                         <th>બાકી</th>
                                         <th>જમા</th>
                                         <th>નોંધ</th>
+                                        <th>Action</th>
 
                                     </tr>
                                 </thead>
@@ -226,6 +227,19 @@ if (3 == $_SESSION['ROLE']) {
                                         <td class="text-danger"><?php echo $row["baki"]; ?></td>
                                         <td class="text-success"><?php echo  $row["jama"]; ?></td>
                                         <td class=""><?php echo  $row["note"]; ?></td>
+                                        <td>
+                                        <form action="account.php" method="POST">
+                                                        <input type="number" value="<?php echo $row["id"]; ?>"  name="id" hidden>
+                                                        
+                                                        <button class="btn btn-warning" type="submit" name=""
+                                                            onclick="return confirm('are you sure to edit')"><i
+                                                                class="bi bi-pencil-square"></i></button>
+
+                                                        <button class="btn btn-danger" type="submit" name="delete"
+                                                            onclick="return confirm('are you sure to delete')"><i
+                                                                class="bi bi-trash3"></i></button>
+                                                    </form>
+                                        </td>
 
 
                                     </tr>

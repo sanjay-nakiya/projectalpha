@@ -120,7 +120,7 @@ if (3 == $_SESSION['ROLE']) {
                                                             onclick="return confirm('are you sure to edit')"><i
                                                                 class="bi bi-pencil-square"></i></button>
 
-                                                        <button class="btn btn-danger" type="submit" name="delete"
+                                                        <button class="btn btn-danger" type="submit" name="customer_delete"
                                                             onclick="return confirm('are you sure to delete')"><i
                                                                 class="bi bi-trash3"></i></button>
                                                     </form>

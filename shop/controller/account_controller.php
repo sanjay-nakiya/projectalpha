@@ -30,9 +30,15 @@ class account
         $res = mysqli_query($this->db, $sql);
         return $res;
     }*/
+    function customer_delete($id)
+    {
+        $sql =prepare('DELETE * FROM customer, account WHERE id='$id',id='$id'');
+        $res = mysqli_query($this->db, $sql);
+        return $res;
+    }
     function delete($id)
     {
-        $sql = "DELETE FROM `account` WHERE `id`='$id'";
+        $sql = "DELETE FROM `account` WHERE `id`='$id'";        
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
@@ -134,11 +140,19 @@ if (isset($_POST['update'])) {
     } else {
         echo "alert('data not updated successfully')";
     }
-} elseif (isset($_POST['delete'])) {
+} elseif (isset($_POST['customer_delete'])) {
+    $id = $_POST['cid'];
+    $res = $obj->customer_delete($id);
+    if ($res) {
+        header("location:customer-list.php");
+    } else {
+        echo "not deleted";
+    }
+}elseif (isset($_POST['delete'])) {
     $id = $_POST['id'];
     $res = $obj->delete($id);
     if ($res) {
-        header("location:account-list.php");
+        header("location:customer-list.php");
     } else {
         echo "not deleted";
     }
