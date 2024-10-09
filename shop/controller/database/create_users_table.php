@@ -20,7 +20,7 @@ $sql = "CREATE TABLE users
     email VARCHAR(255) NOT NULL,
     username VARCHAR(10) NOT NULL,
     pass VARCHAR(255) NOT NULL,
-    user_role INT(1) NOT NULL DEFAULT '2'
+    user_role INT(1) NOT NULL DEFAULT '0'
 )";
 
 if (mysqli_query($conn, $sql)) {
