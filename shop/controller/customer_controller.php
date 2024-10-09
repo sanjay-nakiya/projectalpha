@@ -33,20 +33,6 @@ class customer
                     $errorMsg = "Sorry there was an error sending your message. Please try again later";
                  }
             }
-            
-       
-    }
-   /* function update($id, $course_id,$semester_id,$subject_id,$category_id,$chapter)
-    {
-        $sql = "UPDATE `customer` SET `course_id`='$course_id',`semester_id`='$semester_id',`subject_id`='$subject_id',`category_id`='$category_id',`chapter`='$chapter' WHERE `chapter_id`='$id'";
-        $res = mysqli_query($this->db, $sql);
-        return $res;
-    }*/
-    function delete($id)
-    {
-        $sql = "DELETE FROM `customer` WHERE `id`='$id'";
-        $res = mysqli_query($this->db, $sql);
-        return $res;
     }
     function customerview()
     {
