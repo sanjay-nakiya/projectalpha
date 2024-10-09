@@ -1,14 +1,14 @@
 <?php
 include 'path.php';
-include 'admin/error.php';
+include 'shop/error.php';
 session_start();
 if (isset($_SESSION['ID'])) {
-  header("Location:admin/dashboard.php");
+  header("Location:shop/dashboard.php");
   exit();
 }
 // Include database connectivity
 
-include_once('admin/controller/database/db.php');
+include_once('shop/controller/database/db.php');
 
 if (isset($_POST['submit'])) {
   $errorMsg = "";
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $pn; ?></title>
-  <?php include($path . '/admin/css.php'); ?>
+  <?php include($path . '/shop/css.php'); ?>
 
 </head>
 
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 
 
 
-  <?php include($path . '/admin/js.php'); ?>
+  <?php include($path . '/shop/js.php'); ?>
 </body>
 
 </html>

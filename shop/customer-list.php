@@ -8,7 +8,7 @@ if (!isset($_SESSION['ID'])) {
   include 'logout.php';
   exit();
 }
-if (3 == $_SESSION['ROLE']) {
+if (1 == $_SESSION['ROLE']) {
     include 'controller/customer_controller.php';
 ?>
 <!DOCTYPE html>
@@ -111,7 +111,7 @@ if (3 == $_SESSION['ROLE']) {
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    <form action="account.php" method="POST">
+                                                    <form action="account.php" method="GET">
                                                         <input type="number" value="<?php echo $row["id"]; ?>"
                                                             name="cid" hidden>
                                                         <button class="btn btn-warning" type="submit" name=""><i
