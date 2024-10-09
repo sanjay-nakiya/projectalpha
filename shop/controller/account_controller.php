@@ -32,7 +32,12 @@ class account
     }*/
     function customer_delete($id)
     {
-        $sql ="DELETE FROM `customer` WHERE `id`='$id'";
+      //  $sql ="DELETE FROM `customer` WHERE `id`='$id'";
+
+        $sql= "DELETE customer,account
+        FROM customer 
+        INNER JOIN account ON customer.id = account.customer_id 
+        WHERE customer.id = $id";
         $res = mysqli_query($this->db, $sql);
         return $res;
     }

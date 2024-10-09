@@ -26,8 +26,7 @@ $sql = "CREATE TABLE account
     baki INT(10) NOT NULL,
     total INT(10) NOT NULL,
     jama INT(10) NOT NULL DEFAULT '0',
-    note VARCHAR(255) NOT NULL
-  
+    note VARCHAR(255) NOT NULL  
 )";
 
 if (mysqli_query($conn, $sql)) {
