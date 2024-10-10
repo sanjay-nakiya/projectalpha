@@ -9,6 +9,7 @@ if (!isset($_SESSION['ID'])) {
   exit();
 }
 if (1 == $_SESSION['ROLE']) {
+    $shop=$_SESSION['ID'];
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -50,23 +51,39 @@ if (1 == $_SESSION['ROLE']) {
                 </div> <!--end::Container-->
             </div> <!--end::App Content Header--> <!--begin::App Content-->
             <div class="app-content"> <!--begin::Container-->
-                <div class="container-fluid">
-                    <div class="row">
-                    <div class="col-sm col-md-6 col-lg-12">
-                            <div class="card mb-4">
+            <div class="container">
+                <div class="card card-primary card-outline mb-4"> <!--begin::Header-->
                                 <div class="card-header">
-                                    <h3 class="card-title">પ્રોફાઈલ </h3>
-                                </div> <!-- /.card-header -->
-                                <div class="card-body p-0">
-                                   
+                                    <div class="card-title">મારી પ્રોફાઈલ</div>
+                                </div> <!--end::Header--> <!--begin::Form-->
+                                <form> <!--begin::Body-->
+                                    <div class="card-body">
+                                    <?php
+                                        $sql = "SELECT * FROM `users` WHERE id='$shop'";
+                                        $res = mysqli_query($conn, $sql);
+                                        
+                                            while ($row = mysqli_fetch_assoc($res)) {
+                                                ?>
+                                       
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">નામ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["fname"]; ?> <?php echo $row["lname"]; ?>" readonly></div>
+                                        </div>
+                                        <div class="row mb-3"> <label class="col-sm-3  col-2 col-form-label">યુઝરનેમ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["username"]; ?>" readonly></div>
+                                        </div>                                       
+                                        <div class="row mb-3"> <label class="col-sm-3 col-2 col-form-label">ઈ-મેઈલ:</label>
+                                            <div class="col-sm-9"> <input type="text" class="form-control" value="<?php echo $row["email"]; ?>" readonly></div>
+                                        </div>
+                                       
+                                        <?php } ?>
+                                        
+                                    </div> <!--end::Body--> <!--begin::Footer-->
+                                 </form> <!--end::Form-->
+                            </div>
 
-
-                                </div> <!-- /.card-body -->
-                            </div> <!-- /.card -->
-                        </div> <!-- /.col -->
-                    
-                    </div>
-                </div> <!--end::Container-->
+                    <!--begin::Row-->
+                   
+                </div>
             </div> <!--end::App Content-->
         </main> <!--end::App Main-->
        <!--begin::Footer-->
