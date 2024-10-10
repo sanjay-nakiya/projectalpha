@@ -142,8 +142,8 @@ if (isset($_POST['update'])) {
     } else {
         echo "alert('data not updated successfully')";
     }
-} elseif (isset($_POST['customer_delete'])) {
-    $id = $_POST['cid'];
+} elseif (isset($_GET['customer_delete'])) {
+    $id = $_GET['cid'];
     $res = $obj->customer_delete($id);
     if ($res) {
         header("location:customer-list.php");

@@ -49,6 +49,7 @@ class customer
         $res = mysqli_query($this->db, $sql);
         return $res;
     }
+    
     function totalcustomer()
     {
         $shop=$_SESSION['ID'];        
